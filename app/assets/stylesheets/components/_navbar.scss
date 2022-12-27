@@ -1,0 +1,25 @@
+.navbar{
+  // background-color: lime;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+}
+
+.navbar-title-link{
+  font-style: 'swear-display';
+  text-decoration: none;
+}
+
+.navbar-list{
+  display: flex;
+  list-style-type: none;
+  justify-content: start;
+  align-items: center;
+
+  li{
+    font-weight: bold;
+    font-size: 0.7em;
+    padding: 0px 15px;
+  }
+}
