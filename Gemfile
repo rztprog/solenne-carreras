@@ -74,3 +74,4 @@ end
 # My Gem
 gem 'sass-rails', '~> 6.0'
 gem 'font-awesome-sass', '~> 6.2', '>= 6.2.1'
+gem "dotenv-rails", groups: [:development, :test]
