@@ -9,7 +9,6 @@ export default class extends Controller {
 
   action() {
     this.menuTarget.classList.toggle("active");
-
     this.openTarget.classList.toggle("active");
     this.closeTarget.classList.toggle("active");
   }

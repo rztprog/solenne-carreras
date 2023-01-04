@@ -53,23 +53,13 @@ li > a{
 
 // MEDIA QUERIES
 @media screen and (max-width: 1100px) {
-  .openBtn{
-    display: block;
-  }
-
-  .openBtn.active{
-    display: none;
-  }
-
+  .openBtn,
   .closeBtn.active{
     display: block;
   }
 
-  .navbar{
-    align-items: flex-start;
-  }
-
-  .navbar-list{
+  .navbar-list,
+  .openBtn.active{
     display: none;
   }
 
