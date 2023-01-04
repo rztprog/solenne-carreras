@@ -1,8 +1,8 @@
-<nav id="myNavbar" class="navbar">
+<nav id="myNavbar" class="navbar" data-controller="menu-burger">
   <div>
     <%= link_to "Solenne Carreras", root_path, class: "navbar-title-link" %>
   </div>
-  <ul class="navbar-list">
+  <ul class="navbar-list" data-menu-burger-target='menu'>
     <li><a href="">PHOTOGRAPHIE</a></li>
     <li><a href="">RETOUCHES</a></li>
     <li><a href="">GRAPHISME</a></li>
@@ -13,7 +13,7 @@
       </a>
     </li>
   </ul>
-  <a href="#" id="openBtn">
+  <a id="openBtn" data-action="click->menu-burger#action">
     <span class="burger-icon">
       <span></span>
       <span></span>

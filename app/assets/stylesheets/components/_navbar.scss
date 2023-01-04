@@ -53,21 +53,24 @@ li > a{
 
 
 @media screen and (max-width: 1100px) {
-  .body{
-    overflow: hidden;
-  }
-
   #openBtn{
     display: block;
   }
 
   .navbar{
-    // width: 100vw;
-    // height: 100vh;
     align-items: flex-start;
   }
 
   .navbar-list{
+    display: none;
+
+    li{
+      padding: 0;
+    }
+  }
+
+  .navbar-list.active{
+    display: block;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -77,14 +80,9 @@ li > a{
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
-    padding: 100px 25px;
+    padding: 100px 100px;
     font-size: 18px*4;
     background-color: #fff;
-    display: none;
-  }
-
-  .navbar-list.active{
-    display: block;
   }
 }
 
@@ -93,14 +91,18 @@ li > a{
     padding: 25px 50px;
   }
 
-  .navbar-list{
+  .navbar-list.active{
     height: calc(100vh - 89px); 
   }
 }
 
 @media screen and (max-width: 600px) {
-  .navbar-list{
-    font-size: 10px*4;
+  .navbar{
+    padding: 25px 50px;
+  }
+
+  .navbar-list.active{
+    font-size: 12px*4;
   }
 }
 
