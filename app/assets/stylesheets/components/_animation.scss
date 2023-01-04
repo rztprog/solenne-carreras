@@ -22,14 +22,14 @@
   }
 }
 
-// @keyframes scroll-right {
-//   0% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(100%);
-//   }
-// }
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 1300px) {
