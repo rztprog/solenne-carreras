@@ -29,8 +29,37 @@ li{
 }
 
 li > a{
+  position: relative;
   text-decoration: none;
   color: black;
+
+  &:after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background-color: black;
+    bottom: -4px;
+    left: 0;
+    transition: 0.2s width ease-in;
+  }
+
+  &:hover:after{
+    width: 100%;
+    right: 0;
+  }
+}
+
+.navbar-icon{
+  transition: 0.2s transform linear;
+
+  a:after{
+    display: none;
+  }
+
+  &:hover{
+    transform: rotate(180deg);
+  }
 }
 
 .burger-icon > span{
