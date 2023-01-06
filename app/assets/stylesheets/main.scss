@@ -1,12 +1,25 @@
 .intro{
-  height: 100%;
+  height: calc(100vh - 128px);
   background-color: rgb(199, 199, 199);
   display: flex;
   justify-content: center;
   padding-top: 100px;
+}
 
-  p{
-    font-size: 8*4px;
+.text-intro{
+  font-size: 8*4px;
+  position: absolute;
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 1100px) {
+  .intro{
+    height: calc(100vh - 139px); 
   }
 }
 
+@media screen and (max-width: 900px) {
+  .intro{
+    height: calc(100vh - 89px); 
+  }
+}
