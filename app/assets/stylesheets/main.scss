@@ -4,11 +4,13 @@
   display: flex;
   justify-content: center;
   padding-top: 100px;
+  position: relative;
 }
 
 .text-intro{
   font-size: 8*4px;
   position: absolute;
+  z-index: 1;
 }
 
 // MEDIA QUERIES
