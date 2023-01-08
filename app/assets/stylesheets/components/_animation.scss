@@ -1,11 +1,11 @@
 .animation-part{
   overflow: hidden;
-  background-color: lightgrey;
+  // background-color: lightgrey;
 }
 
 .text-wrapper{
   display: flex;
-  background-color: rgba($color: #fff, $alpha: 0);
+  // background-color: rgba($color: #fff, $alpha: 0);
   width: 100%;
   height: 100%;
   animation: scroll-right 10s linear infinite;
