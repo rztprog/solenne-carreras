@@ -1,5 +1,8 @@
 .figure-image{
   max-width: 20%;
+  filter: contrast(110%);
+  -webkit-filter: contrast(110%);
+  -moz-filter: contrast(110%);
 }
 
 .image-top{
