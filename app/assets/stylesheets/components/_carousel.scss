@@ -1,0 +1,45 @@
+// @import "swiper/swiper-min.css";
+// Voir pour import swiper ici
+
+.carousel-part{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.item{
+  display: flex;
+  justify-content: center;
+}
+
+.image-carousel{
+  object-fit: cover;
+  width: 500px;
+  height: 500px;
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 1600px) {
+  .image-carousel{
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .image-carousel{
+    object-fit: cover;
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .image-carousel{
+    object-fit: cover;
+    width: 500px;
+    height: 500px;
+  }
+}
+
