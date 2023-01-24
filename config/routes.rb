@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "main#index"
+
+  resources :contacts, only: [:new, :create]
+  get '/contacts', to: 'contacts#new', as: 'contact'
+  get '/contacts/sent'
 end
