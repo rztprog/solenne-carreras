@@ -1,42 +1,41 @@
-<p>J'aimerais avoir de vos nouvelles. Envoyez-moi un message ci-dessous.</p>
+<div class="form-part">
+    <%= form_for @contact, html: { class: "form-contact" } do |form| %>
 
-<%= form_for @contact do |form| %>
+    <% if @contact.errors.any? %>
+        <div id="error_explanation" class="">
+            <div class=""><%= pluralize(@contact.errors.count, "error") %> Interdiction d'enregistrement de cette page:</div>
 
-<% if @contact.errors.any? %>
-    <div id="error_explanation" class="">
-        <div class=""><%= pluralize(@contact.errors.count, "error") %> Interdiction d'enregistrement de cette page:</div>
+            <ul class="">
+                <% @contact.errors.each do |error| %>
+                    <li class=""><%= error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-        <ul class="">
-            <% @contact.errors.each do |error| %>
-                <li class=""><%= error.full_message %></li>
-            <% end %>
-        </ul>
+    <div class="form-samerow">
+        <div class="form-row">
+            <%= form.label "Prénom" %>
+            <%= form.text_field :surname %>
+        </div>
+        <div class="form-row">
+            <%= form.label "Nom" %>
+            <%= form.text_field :name %>
+        </div>
     </div>
-<% end %>
 
-<div class="">
-    <div class="">
-        <%= form.label "Prénom" %>
-        <%= form.text_field :surname %>
+    <div class="form-row">
+        <%= form.label "Email" %>
+        <%= form.email_field :email %>
     </div>
 
-    <div class="">
-        <%= form.label "Nom" %>
-        <%= form.text_field :name %>
+    <div class="form-row">
+        <%= form.label "Message" %>
+        <%= form.text_area :message %>
     </div>
-</div>
 
-<div class="">
-    <%= form.label "Email" %>
-    <%= form.email_field :email %>
+    <div class="form-submit">
+        <%= form.submit "Envoyer", class: "form-submit-button" %>
+    </div>
+    <% end %>
 </div>
-
-<div class="">
-    <%= form.label "Message" %>
-    <%= form.text_area :message %>
-</div>
-
-<div class="">
-    <%= form.submit "Envoyer" %>
-</div>
-<% end %>
