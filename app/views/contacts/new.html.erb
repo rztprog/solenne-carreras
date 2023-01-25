@@ -1,5 +1,5 @@
 <div class="form-part">
-    <%= form_for @contact, html: { class: "form-contact" } do |form| %>
+    <%= form_for @contact, html: { class: "form-contact" } do |f| %>
 
     <% if @contact.errors.any? %>
         <div id="error_explanation" class="">
@@ -15,27 +15,27 @@
 
     <div class="form-samerow">
         <div class="form-row">
-            <%= form.label "Prénom" %>
-            <%= form.text_field :surname %>
+            <%= f.label "Prénom" %>
+            <%= f.text_field :surname %>
         </div>
         <div class="form-row">
-            <%= form.label "Nom" %>
-            <%= form.text_field :name %>
+            <%= f.label "Nom" %>
+            <%= f.text_field :name %>
         </div>
     </div>
 
     <div class="form-row">
-        <%= form.label "Email" %>
-        <%= form.email_field :email %>
+        <%= f.label "Email" %>
+        <%= f.email_field :email %>
     </div>
 
     <div class="form-row">
-        <%= form.label "Message" %>
-        <%= form.text_area :message %>
+        <%= f.label "Message" %>
+        <%= f.text_area :message %>
     </div>
 
     <div class="form-submit">
-        <%= form.submit "Envoyer", class: "form-submit-button" %>
+        <%= f.submit "Envoyer", class: "form-submit-button" %>
     </div>
     <% end %>
 </div>

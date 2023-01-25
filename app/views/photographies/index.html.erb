@@ -1,0 +1,8 @@
+<div class="photographie-container">
+  <%= link_to "Ajouter +", new_photography_path %>
+
+  <% @photographies.each do |photography| %>
+    <img src="<%= cl_image_path photography.photo.key, height: 150, width: 300, crop: :fill %>" alt="">
+    <%= photography.name %>
+  <% end %>
+</div>

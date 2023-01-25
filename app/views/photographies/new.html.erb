@@ -1,0 +1,14 @@
+<h1>Création d'un nouvel element</h1>
+<hr>
+<%= form_for @photographie do |f| %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.file_field :photo, as: :file %>
+  <br>
+
+  <%= f.submit "Create un nouvel element" %>
+<% end %>
+
+<%= link_to photographies_path do %>
+  <i class="fas fa-undo-alt"> Retour en arrière</i>
+<% end %>
