@@ -15,12 +15,12 @@
   justify-content: space-evenly;
 }
 
-.services-grid-container{
+.services-grid-image-container{
   background-color: #000;
   border-radius: 25px;
   width: 270px;
   height: 350px;
-  overflow: hidden; // For fit cover with radius parent
+  overflow: hidden; // For fit cover with border-radius parent
 }
 
 .services-grid-image{
@@ -30,7 +30,7 @@
 }
 
 .services-description{
-  margin-top: 16px;
+  margin: 16px 0;
   list-style-position: inside;
 
   ul, h3{
@@ -43,5 +43,24 @@
 
   li{
     padding: 0;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .services-grid-image-container{
+    width: 100%;
+    height: 400px;
+  }
+
+  .services-part{
+    height: auto;
+  }
+
+  .services-grid > div{
+    margin: 0 40px;
+  }  
+
+  .services-grid{
+    flex-direction: column;
   }
 }
