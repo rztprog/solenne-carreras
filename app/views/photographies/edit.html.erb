@@ -1,16 +1,19 @@
-<h1>Modification </h1>
-<hr>
-<%= form_for @photographie do |f| %>
-  <%= f.text_field :name %>
-  <br>
-  <%= f.text_field :description %>
-  <br>
-  <%= f.file_field :photo, as: :file %>
-  <br>
+<div class="formfor-container">
+  <%= form_for @photographie do |f| %>
+    <div class="formfor-form-container">
+      <h1>Modification </h1>
+      <hr>
+      <%= f.label "Nom" %>
+      <%= f.text_field :name, class: "formfor-field" %>
+      <%= f.label "Description" %>
+      <%= f.text_field :description, class: "formfor-field" %>
+      <%= f.label "Photo principal" %>
+      <%= f.file_field :photo, as: :file %>
 
-  <%= f.submit "Create un nouvel element" %>
-<% end %>
-
-<%= link_to photographies_path do %>
-  <i class="fas fa-undo-alt"> Retour en arrière</i>
-<% end %>
+      <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
+      <%= link_to photographies_path do %>
+        <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
+      <% end %>
+    </div>
+  <% end %>
+</div>

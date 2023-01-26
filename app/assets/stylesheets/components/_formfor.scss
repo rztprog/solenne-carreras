@@ -1,0 +1,60 @@
+.formfor-container{
+  margin: 0 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.edit_photographie,
+.new_photographie{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.formfor-form-container{
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  width: 600px;
+  background-color: #eee;
+  padding: 25px;
+
+  *{
+    margin-bottom: 25px;
+  }
+
+  label{
+    margin-bottom: 10px;
+  }
+
+  *:last-child{
+    margin-bottom: 0;
+  }
+
+  .form-submit-button{
+    width: 100%;
+  }
+}
+
+.formfor-button{
+  font-size: medium;
+  background-color: rgba($color: #00ff1a, $alpha: 0.1);
+
+  &:hover{
+    box-shadow: inset 0 0 4px #000;
+    background-color: rgba($color: #00ff1a, $alpha: 0.2);
+    color: #000;
+  }
+}
+
+.formfor-field{
+  width: auto;
+  height: 50px;
+  font-size: 1.6em;
+  overflow-wrap: break-word;
+}
+
+hr{
+  color: #fff;
+}

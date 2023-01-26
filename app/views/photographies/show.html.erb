@@ -1,7 +1,7 @@
 <div class="photographie-show-intro">
   <img src="<%= cl_image_path @photographie.photo.key %>" alt="photographie photo">
-  <p><%= @photographie.description %></p>   <%# A remplacer par la description %>
+  <p><%= @photographie.description %></p>
 </div>
-<div class="photographie-add-button-container">
+<div class="photographie-button-container">
   <%= link_to "Modifier", edit_photography_path(@photographie), class: "photographie-add-button" %>
 </div>
