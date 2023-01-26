@@ -27,14 +27,14 @@ class PhotographiesController < ApplicationController
 
   def update
     @photographie.update(photographie_params)
-    redirect_to photographie_path(@photographie)
+    redirect_to photography_path(@photographie)
   end
 
   def destroy
     @photographie = Photographie.find(params[:id])
     authorize @photographie
     @photographie.destroy
-    redirect_to photographie_path
+    redirect_to photography_path
   end
 
   private

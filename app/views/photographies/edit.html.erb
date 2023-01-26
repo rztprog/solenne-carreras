@@ -1,4 +1,4 @@
-<h1>Création d'un nouvel element</h1>
+<h1>Modification </h1>
 <hr>
 <%= form_for @photographie do |f| %>
   <%= f.text_field :name %>
@@ -8,7 +8,7 @@
   <%= f.file_field :photo, as: :file %>
   <br>
 
-  <%= f.submit "Sauvegarder" %>
+  <%= f.submit "Create un nouvel element" %>
 <% end %>
 
 <%= link_to photographies_path do %>
