@@ -3,9 +3,7 @@
 }
 
 .photographie-button-container{
-  // width: 100%;
-  // height: auto;
-  margin-bottom: 15px;
+  margin-bottom: calc(15px * 2);
 }
 
 .photographie-add-button{
@@ -44,8 +42,20 @@
   }
 }
 
-.photography-photo{
+.photographie-photo-container{
+  position: relative;
+  overflow: hidden;
+}
+
+.photographie-grid-element:hover{
+  .photographie-photo {
+    transform: scale(1.1);
+  }
+}
+
+.photographie-photo{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.3s;
 }

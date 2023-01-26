@@ -4,22 +4,14 @@
   </div>
 
   <div class="photographie-grid">
-    <% @photographies.each do |photography| %>
+    <% @photographies.each do |photographie| %>
       <div class="photographie-grid-element">
-        <img class="photography-photo" src="<%= cl_image_path photography.photo.key%>" alt="photography photo">
-        <p><%= photography.name %></p>
-      </div>
-    <% end %>
-        <% @photographies.each do |photography| %>
-      <div class="photographie-grid-element">
-        <img class="photography-photo" src="<%= cl_image_path photography.photo.key %>" alt="photography photo">
-        <p><%= photography.name %></p>
-      </div>
-    <% end %>
-        <% @photographies.each do |photography| %>
-      <div class="photographie-grid-element">
-        <img class="photography-photo" src="<%= cl_image_path photography.photo.key %>" alt="photography photo">
-        <p><%= photography.name %></p>
+        <div class="photographie-photo-container">
+          <img class="photographie-photo" src="<%= cl_image_path photographie.photo.key%>" alt="photographie photo">
+        </div>
+        <div>
+          <p><%= photographie.name %></p>
+        </div>
       </div>
     <% end %>
   </div>
