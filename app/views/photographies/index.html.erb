@@ -1,8 +1,26 @@
 <div class="photographie-container">
-  <%= link_to "Ajouter +", new_photography_path %>
+  <div class="photographie-button-container">
+    <%= link_to "Ajouter +", new_photography_path, class: "photographie-add-button" %>
+  </div>
 
-  <% @photographies.each do |photography| %>
-    <img src="<%= cl_image_path photography.photo.key, height: 150, width: 300, crop: :fill %>" alt="">
-    <%= photography.name %>
-  <% end %>
+  <div class="photographie-grid">
+    <% @photographies.each do |photography| %>
+      <div class="photographie-grid-element">
+        <img class="photography-photo" src="<%= cl_image_path photography.photo.key%>" alt="photography photo">
+        <p><%= photography.name %></p>
+      </div>
+    <% end %>
+        <% @photographies.each do |photography| %>
+      <div class="photographie-grid-element">
+        <img class="photography-photo" src="<%= cl_image_path photography.photo.key %>" alt="photography photo">
+        <p><%= photography.name %></p>
+      </div>
+    <% end %>
+        <% @photographies.each do |photography| %>
+      <div class="photographie-grid-element">
+        <img class="photography-photo" src="<%= cl_image_path photography.photo.key %>" alt="photography photo">
+        <p><%= photography.name %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
