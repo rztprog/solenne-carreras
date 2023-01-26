@@ -5,6 +5,7 @@
 
   <div class="photographie-grid">
     <% @photographies.each do |photographie| %>
+    <%= link_to photography_path(photographie) do %>
       <div class="photographie-grid-element">
         <div class="photographie-photo-container">
           <img class="photographie-photo" src="<%= cl_image_path photographie.photo.key%>" alt="photographie photo">
@@ -14,5 +15,6 @@
         </div>
       </div>
     <% end %>
+  <% end %>
   </div>
 </div>
