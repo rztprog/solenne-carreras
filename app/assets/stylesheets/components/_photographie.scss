@@ -2,7 +2,7 @@
   margin: 0 100px;
 }
 
-.photographie-add-button-container{
+.photographie-button-container{
   margin-bottom: calc(15px * 2);
 }
 
@@ -67,6 +67,8 @@
 
 .photographie-show-intro{
   position: relative;
+  height: 400px;
+  margin-bottom: calc(15px *2);
 
   p{
     position: absolute;
@@ -78,7 +80,7 @@
 }
 
 .photographie-show-intro img{
-  width: 100%;
-  height: 400px;
   object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
