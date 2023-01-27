@@ -2,6 +2,11 @@
   <img src="<%= cl_image_path "photographies/" + @photographie.photo.key %>" alt="photographie photo">
   <p><%= @photographie.description %></p>
 </div>
-<div class="photographie-button-container">
-  <%= link_to "Modifier", edit_photography_path(@photographie), class: "photographie-add-button" %>
+<div class="photographie-container">
+  <div class="photographie-container-elements">
+    <div class="photographie-buttons-container">
+      <%= link_to "Modifier", edit_photography_path(@photographie), class: "photographie-add-button" %>
+      <%= link_to "Supprimer", photography_path(@photographie), class: "photographie-add-button", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} %>
+    </div>
+  </div>
 </div>

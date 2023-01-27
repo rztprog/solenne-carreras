@@ -6,9 +6,12 @@ Rails.application.routes.draw do
 
   root to: "main#index"
 
+  # Contact
   resources :contacts, only: [:new, :create]
   get '/contacts', to: 'contacts#new', as: 'contact'
   get '/contacts/sent'
 
+  # Photographies
   resources :photographies
+    # Add upload multiplephotos to specific photographie context
 end

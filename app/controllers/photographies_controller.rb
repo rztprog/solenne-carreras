@@ -1,5 +1,5 @@
 class PhotographiesController < ApplicationController
-  before_action :set_photographie, only: [:show, :edit, :update]
+  before_action :set_photographie, only: [:show, :edit, :update, :destroy]
 
   def index
     @photographies = Photographie.all
@@ -31,10 +31,8 @@ class PhotographiesController < ApplicationController
   end
 
   def destroy
-    @photographie = Photographie.find(params[:id])
-    authorize @photographie
     @photographie.destroy
-    redirect_to photography_path
+    redirect_to photographies_path, status: :see_other
   end
 
   private
