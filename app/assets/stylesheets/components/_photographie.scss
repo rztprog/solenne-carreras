@@ -1,14 +1,25 @@
 .photographie-container{
   margin: 0 100px;
+  // background-color: green;
+  display: flex;
+  justify-content: center;
 }
 
-.photographie-button-container{
+.photographie-container-elements{
+  display: flex;
+  flex-direction: column;
+  // background-color: blue;
+  width: 1200px;
+}
+
+.photographie-buttons-container{
+  padding: 15px 0;
   margin-bottom: calc(15px * 2);
 }
 
 .photographie-add-button{
-  background-color: #000;
   padding: 15px 25px;
+  background-color: #000;
   color: #fff;
   text-decoration: none;
   font-size: 1em;
@@ -31,7 +42,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 35px 35px;
-  max-width: 1000px;
   width: 100%;
 
   a{
