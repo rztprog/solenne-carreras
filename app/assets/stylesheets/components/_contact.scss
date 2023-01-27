@@ -43,6 +43,11 @@
   }
 }
 
+.form-row textarea{
+  min-height: 150px;
+  max-height: 350px;
+}
+
 .form-contact{ 
   width: 500px;
 }
@@ -62,3 +67,21 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .form-part{
+    margin: 0 50px;
+  }
+  
+  .form-contact{
+    width: 100%;
+  }
+
+  .form-row input,
+  .form-row textarea{
+    font-size: 1.4em;
+  }
+
+  .form-row textarea{
+    min-height: 400px;
+  }
+}
