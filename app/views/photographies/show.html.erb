@@ -1,5 +1,5 @@
 <div class="photographie-show-intro">
-  <img src="<%= cl_image_path @photographie.photo.key %>" alt="photographie photo">
+  <img src="<%= cl_image_path "photographies/" + @photographie.photo.key %>" alt="photographie photo">
   <p><%= @photographie.description %></p>
 </div>
 <div class="photographie-button-container">
