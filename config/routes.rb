@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   # Photographies
   resources :photographies
     # Add upload multiplephotos to specific photographie context
+
+  resources :graphismes
 end

@@ -1,0 +1,11 @@
+<div class="photographie-show-intro">
+  <p><%= @graphisme.description %></p>
+</div>
+<div class="photographie-container">
+  <div class="photographie-container-elements">
+    <div class="photographie-buttons-container">
+      <%= link_to "Modifier", edit_graphisme_path(@graphisme), class: "photographie-add-button" %>
+      <%= link_to "Supprimer", graphisme_path(@graphisme), class: "photographie-add-button", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} %>
+    </div>
+  </div>
+</div>
