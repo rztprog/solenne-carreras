@@ -7,6 +7,7 @@
     <div class="photographie-buttons-container">
       <%= link_to "Modifier", edit_photography_path(@photographie), class: "photographie-add-button" %>
       <%= link_to "Supprimer", photography_path(@photographie), class: "photographie-add-button", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} %>
+      <%= link_to "Retour", photographies_path, class: "photographie-add-button" %>
     </div>
   </div>
 </div>

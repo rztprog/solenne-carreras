@@ -6,6 +6,7 @@
     <div class="photographie-buttons-container">
       <%= link_to "Modifier", edit_graphisme_path(@graphisme), class: "photographie-add-button" %>
       <%= link_to "Supprimer", graphisme_path(@graphisme), class: "photographie-add-button", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} %>
+      <%= link_to "Retour", graphismes_path, class: "photographie-add-button" %>
     </div>
   </div>
 </div>
