@@ -61,6 +61,10 @@
   font-size: 1.5em;
   padding: 20px 0;
   height: 20%;
+
+  p{
+    font-weight: 600;
+  }
 }
 
 .photographie-photo-container{
@@ -92,8 +96,10 @@
     position: absolute;
     top: 50%;
     left: 100px;
+    // mix-blend-mode:color;
     color: #fff;
     font-size: 1.6em;
+    font-weight: 600;
   }
 }
 
