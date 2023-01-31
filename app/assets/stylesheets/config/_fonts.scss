@@ -1,9 +1,19 @@
 @font-face {
-  font-family: 'swear-display';
+  font-family: 'swear-display-regular';
   src: url('Swear-Display-Regular.otf');
 }
 
 @font-face {
-  font-family: 'degular';
+  font-family: 'degular-regular';
   src: url('degular-regular.otf');
+}
+
+@font-face {
+  font-family: 'degular-bold';
+  src: url('degular-bold.otf');
+}
+
+@font-face {
+  font-family: 'degular-thin';
+  src: url('Degular-Thin.otf');
 }
