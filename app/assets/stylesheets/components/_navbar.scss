@@ -101,7 +101,7 @@ li > a{
     right: 0;
     bottom: 0;
     width: 100%;
-    height: calc(100vh - 139px); 
+    height: calc(100% - 139px); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,7 +127,7 @@ li > a{
 
   .navbar-list.active{
     padding: 50px;
-    height: calc(100vh - 89px); 
+    height: calc(100% - 89px); 
   }
 }
 
