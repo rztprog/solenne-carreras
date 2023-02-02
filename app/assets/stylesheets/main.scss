@@ -3,6 +3,10 @@ html, body{
   font-family: "swear-display-regular", serif;
 }
 
+.hidden{
+  overflow: hidden;
+}
+
 .body {
   display: flex;
   flex-direction: column;
