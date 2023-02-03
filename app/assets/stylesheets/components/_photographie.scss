@@ -11,6 +11,8 @@
 }
 
 .photographie-buttons-container{
+  display: flex;
+  flex-wrap: wrap;
   font-family: Arial, Helvetica, sans-serif;
   padding: 15px 0;
   margin-bottom: calc(15px * 2);
@@ -18,6 +20,8 @@
 
 .photographie-add-button{
   padding: 15px 25px;
+  margin-right: 8px;
+  margin-bottom: 8px;
   background-color: #000;
   color: #fff;
   text-decoration: none;
@@ -26,8 +30,8 @@
 
   &:hover{
     color: #000;
-    background-color: #fff;
-    box-shadow: inset 0 0 3px #000;
+    background-color: #bbb;
+    // box-shadow: inset 0 0 3px #000;
   }
 }
 
@@ -83,31 +87,46 @@
 
 .photographie-show-intro{
   position: relative;
-  height: 400px;
+  height: 600px;
   margin-bottom: calc(15px *2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   p{
+    font-family: "swear-display-thin";
     position: absolute;
-    top: 50%;
+    right: 30%;
     left: 100px;
-    // mix-blend-mode:color;
     color: #fff;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 600;
+    line-height: 1.2;
+    text-shadow: 0px 0px 8px black;
+  }
+
+  img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 }
 
-.photographie-show-intro img{
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
 
 .delete-photographie-button{
   position: absolute;
 }
 
 @media screen and (max-width: 900px) {
+  .photographie-show-intro {
+    height: 400px;
+
+    p{
+      right: 50px;
+      left: 50px;
+    }
+  }
+
   .photographie-container{
     margin: 0 50px;
   }
@@ -118,5 +137,11 @@
 
   .photographie-photo-container{
     height: 400px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .photographie-show-intro{
+    // height: 500px;
   }
 }
