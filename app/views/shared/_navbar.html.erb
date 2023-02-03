@@ -3,10 +3,10 @@
     <%= link_to "Solenne Carreras", root_path, class: "navbar-title-link" %>
   </div>
   <ul class="navbar-list" data-menu-burger-target='menu'>
-    <li><%= link_to "PHOTOGRAPHIE", photographies_path %></li>
+    <li><%= link_to "PHOTOGRAPHIE", photographies_path, class: "#{'current-list' if current_page?(photographies_path)}" %></li>
     <li><a href="">RETOUCHES</a></li>
-    <li><%= link_to "GRAPHISME", graphismes_path %></li>
-    <li><%= link_to "CONTACT", contacts_path %></li>
+    <li><%= link_to "GRAPHISME", graphismes_path, class: "#{'current-list' if current_page?(graphismes_path)}"  %></li>
+    <li><%= link_to "CONTACT", contacts_path, class: "#{'current-list' if current_page?(contacts_path)}"  %></li>
     <li class="navbar-icon">
       <a href="http://instagram.com/iamsolenne" class="navbar-title-link">
         <i class="fa-brands fa-instagram"></i>
