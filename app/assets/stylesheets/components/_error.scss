@@ -1,0 +1,39 @@
+.error-container,
+.success-container{
+  position: relative;
+  border-radius: .25rem;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.error-container{
+  color: #721c24;
+  background-color: #f8d7da;
+  border:  #f5c6cb;
+}
+
+.success-container{
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  margin: 0 100px;
+
+  h2{
+    border-bottom: 1px solid #c3e6cb;
+  }
+}
+
+.error-list{
+  list-style-type: none;
+}
+
+.error-title{
+  border-bottom: 1px solid #f5c6cb;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .success-container{
+    margin: 0;
+  }
+}

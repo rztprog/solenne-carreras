@@ -2,12 +2,11 @@
     <%= form_for @contact, html: { class: "form-contact" } do |f| %>
 
     <% if @contact.errors.any? %>
-        <div id="error_explanation" class="">
-            <div class=""><%= pluralize(@contact.errors.count, "error") %> Interdiction d'enregistrement de cette page:</div>
-
-            <ul class="">
+        <div class="error-container">
+            <h2 class="error-title">Attention il y a <%= pluralize(@contact.errors.count, "erreur") %> :</h2>
+            <ul class="error-list">
                 <% @contact.errors.each do |error| %>
-                    <li class=""><%= error.full_message %></li>
+                    <li><%= error.full_message %></li>
                 <% end %>
             </ul>
         </div>
@@ -15,12 +14,12 @@
 
     <div class="form-samerow">
         <div class="form-row">
-            <%= f.label "Prénom" %>
-            <%= f.text_field :surname %>
-        </div>
-        <div class="form-row">
             <%= f.label "Nom" %>
             <%= f.text_field :name %>
+        </div>
+        <div class="form-row">
+            <%= f.label "Prénom" %>
+            <%= f.text_field :surname %>
         </div>
     </div>
 
