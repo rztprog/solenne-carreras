@@ -1,0 +1,2 @@
+class PhotographieContentsController < ApplicationController
+end
