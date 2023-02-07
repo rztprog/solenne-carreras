@@ -1,0 +1,15 @@
+<div class="formfor-container">
+  <%= form_for [@photographie, @photographie_content] do |f| %>
+    <div class="formfor-form-container">
+      <h1>Photos upload</h1>
+      <hr>
+      <%= f.label "Photos" %>
+      <%= f.file_field :photo, as: :file, multiple: true %>
+
+      <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
+      <%= link_to photographies_path do %>
+        <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
+      <% end %>
+    </div>
+  <% end %>
+</div>

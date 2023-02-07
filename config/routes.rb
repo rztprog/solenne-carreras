@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  # Root
   root to: "main#index"
 
   # Contact
@@ -12,8 +13,10 @@ Rails.application.routes.draw do
   get '/contacts/sent'
 
   # Photographies
-  resources :photographies
-    # Add upload multiplephotos to specific photographie context
+  resources :photographies do
+    resources :photographie_contents, only: [:new, :create, :destroy]
+  end
 
+  # Graphismes
   resources :graphismes
 end
