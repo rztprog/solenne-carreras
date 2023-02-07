@@ -6,12 +6,11 @@ class PhotographieContentsController < ApplicationController
   end
 
   def create
-    # @photographieContent = PhotographieContent.new(photographieContent_params)
-    @photographieContent = PhotographieContent.new
+    @photographieContent = PhotographieContent.new(photographie_content_params)
     @photographieContent.photographie = @photographie
 
     if @photographieContent.save
-      redirect_to photographie_path(@photographie)
+      redirect_to photography_path(@photographie)
     else
       render :new
     end
@@ -20,14 +19,14 @@ class PhotographieContentsController < ApplicationController
   def destroy
     @photographieContent = PhotographieContent.find(params[:id])
     @photographieContent.destroy
-    redirect_to photographie_path(@photographie)
+    redirect_to photography_path(@photographie)
   end
 
   private
 
-  # def photographieContent_params
-  #   params.require(:photographieContent).permit()
-  # end
+  def photographie_content_params
+    params.require(:photographie_content).permit(:photo)
+  end
 
   def set_photographie
     @photographie = Photographie.find(params[:photography_id])
