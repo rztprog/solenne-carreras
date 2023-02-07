@@ -1,20 +1,31 @@
-<div class="formfor-container">
-  <%= form_for @photographie do |f| %>
-    <div class="formfor-form-container">
-      <h1>Nouvel element</h1>
-      <hr>
-      <%= f.label "Nom" %>
-      <%= f.text_field :name, class: "formfor-field" %>
-      <%= f.label "Description" %>
-      <%= f.text_field :description, class: "formfor-field" %>
-      <%= f.label "Photo principal" %>
-      <%= f.file_field :photo, as: :file %>
-
-      <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
-      <%= link_to photographies_path do %>
-        <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
+<div class="form-part">
+  <div class="formfor-container">
+    <%= form_for @photographie do |f| %>
+      <% if @photographie.errors.any? %>
+        <div class="error-container">
+            <h2 class="error-title">Attention il y a <%= pluralize(@photographie.errors.count, "erreur") %> :</h2>
+            <ul class="error-list">
+                <% @photographie.errors.each do |error| %>
+                    <li><%= error.full_message %></li>
+                <% end %>
+            </ul>
+        </div>
       <% end %>
-    </div>
-  <% end %>
-</div>
+      <div class="formfor-form-container">
+        <h1>Nouvel element</h1>
+        <hr>
+        <%= f.label "Nom" %>
+        <%= f.text_field :name, class: "formfor-field" %>
+        <%= f.label "Description" %>
+        <%= f.text_field :description, class: "formfor-field" %>
+        <%= f.label "Photo principal" %>
+        <%= f.file_field :photo, as: :file %>
 
+        <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
+        <%= link_to photographies_path do %>
+          <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
