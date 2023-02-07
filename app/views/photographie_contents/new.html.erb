@@ -1,7 +1,7 @@
 <div class="formfor-container">
   <%= form_for [@photographie, @photographie_content] do |f| %>
     <div class="formfor-form-container">
-      <h1>Photos upload</h1>
+      <h1>Ajouter des photos à NAME</h1>
       <hr>
       <%= f.label "Photos" %>
       <%= f.file_field :photo, as: :file, multiple: true %>
