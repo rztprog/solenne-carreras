@@ -6,7 +6,8 @@ class PhotographieContentsController < ApplicationController
   end
 
   def create
-    @photographieContent = PhotographieContent.new(photographieContent_params)
+    # @photographieContent = PhotographieContent.new(photographieContent_params)
+    @photographieContent = PhotographieContent.new
     @photographieContent.photographie = @photographie
 
     if @photographieContent.save
@@ -24,9 +25,9 @@ class PhotographieContentsController < ApplicationController
 
   private
 
-  def photographieContent_params
-    params.require(:photographieContent).permit()
-  end
+  # def photographieContent_params
+  #   params.require(:photographieContent).permit()
+  # end
 
   def set_photographie
     @photographie = Photographie.find(params[:photography_id])
