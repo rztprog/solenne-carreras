@@ -16,7 +16,7 @@
         <%= f.file_field :photo, as: :file %>
 
         <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
-        <%= link_to photographies_path do %>
+        <%= link_to photography_path(@photographie) do %>
           <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
         <% end %>
       </div>
