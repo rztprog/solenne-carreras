@@ -14,7 +14,6 @@ class PhotographieContentsController < ApplicationController
     if (photo_content_type.start_with?('image') && @photographieContent.save)
       redirect_to photography_path(@photographie)
     else
-      @error = "Le fichier doit-être une image"
       render :new, status: :unprocessable_entity
     end
   end

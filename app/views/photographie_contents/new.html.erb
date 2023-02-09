@@ -1,11 +1,13 @@
 <div class="form-part">
   <div class="formfor-container">
     <%= form_for [@photographie, @photographieContent] do |f| %>
-      <% if @error.present? %>
+      <% if @photographie.errors.any? %>
         <div class="error-container">
-          <h2 class="error-title">Attention il y a 1 erreur :</h2>
+          <h2 class="error-title">Attention il y a <%= pluralize(@photographie.errors.count, "erreur") %> :</h2>
           <ul class="error-list">
-            <p><%= @error %></p>
+            <% @photographie.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+            <% end %>
           </ul>
         </div>
       <% end %>

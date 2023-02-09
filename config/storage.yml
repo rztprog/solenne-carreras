@@ -14,7 +14,7 @@ cloudinary_photographies:
   service: Cloudinary
   folder: <%= Rails.env %>/solenne-carreras/photographies
 
-cloudinary_photographies_content:
+cloudinary_photographie_contents:
   service: Cloudinary
   folder: <%= Rails.env %>/solenne-carreras/photographies/content
 
