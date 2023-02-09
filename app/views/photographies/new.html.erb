@@ -3,12 +3,12 @@
     <%= form_for @photographie do |f| %>
       <% if @photographie.errors.any? %>
         <div class="error-container">
-            <h2 class="error-title">Attention il y a <%= pluralize(@photographie.errors.count, "erreur") %> :</h2>
-            <ul class="error-list">
-                <% @photographie.errors.each do |error| %>
-                    <li><%= error.full_message %></li>
-                <% end %>
-            </ul>
+          <h2 class="error-title">Attention il y a <%= pluralize(@photographie.errors.count, "erreur") %> :</h2>
+          <ul class="error-list">
+            <% @photographie.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
         </div>
       <% end %>
       <div class="formfor-form-container">

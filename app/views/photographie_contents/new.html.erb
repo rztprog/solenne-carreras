@@ -1,6 +1,14 @@
 <div class="form-part">
   <div class="formfor-container">
     <%= form_for [@photographie, @photographieContent] do |f| %>
+      <% if @error.present? %>
+        <div class="error-container">
+          <h2 class="error-title">Attention il y a 1 erreur :</h2>
+          <ul class="error-list">
+            <p><%= @error %></p>
+          </ul>
+        </div>
+      <% end %>
       <div class="formfor-form-container">
         <h1>Ajouter des photos à <%= @photographie.name %></h1>
         <hr>

@@ -9,10 +9,13 @@ class PhotographieContentsController < ApplicationController
     @photographieContent = PhotographieContent.new(photographie_content_params)
     @photographieContent.photographie = @photographie
 
-    if @photographieContent.save
+    photo_content_type = @photographieContent.photo.content_type
+
+    if (photo_content_type.start_with?('image') && @photographieContent.save)
       redirect_to photography_path(@photographie)
-    else
-      render :new
+    else !photo_content_type.start_with?('image')
+      @error = "Le fichier doit-être une image"
+      render :new, status: :unprocessable_entity
     end
   end
 

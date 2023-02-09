@@ -18,7 +18,6 @@ class PhotographiesController < ApplicationController
     if @photographie.save
       redirect_to photography_path(@photographie)
     else      
-      flash.now[:error] = 'Erreur'
       render :new, status: :unprocessable_entity
     end
   end
