@@ -12,3 +12,10 @@
     </div>
   </div>
 </div>
+<div class="grid-photos-container">
+  <% @photographie.photographie_contents.each do |image_content| %>
+    <img src="<%= cl_image_path "photographies/content/" + image_content.photo.key %>" alt="photographie photo">
+  <% end %>
+</div>
+
+<script></script>

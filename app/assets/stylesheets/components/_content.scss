@@ -1,0 +1,21 @@
+$gap: 20px;
+$column: 3;
+
+.grid-photos-container {
+  line-height: 0;
+  padding: 0 100px;
+
+  -webkit-column-count: $column;
+  -webkit-column-gap: $gap;
+  -moz-column-count: $column;
+  -moz-column-gap: $gap;
+  column-count: $column;
+  column-gap: $gap;
+
+  img {
+    width: 100%;
+    height: auto;
+    padding-bottom: $gap; // Fix row-gap
+  }
+}
+
