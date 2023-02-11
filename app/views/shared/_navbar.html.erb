@@ -2,7 +2,7 @@
   <div>
     <%= link_to "Solenne Carreras", root_path, class: "navbar-title-link" %>
   </div>
-  <ul class="navbar-list" data-menu-burger-target='menu'>
+  <ul class="navbar-list" data-menu-burger-target='desktopList'>
     <li><%= link_to "PHOTOGRAPHIE", photographies_path, class: "#{'current-list' if current_page?(photographies_path)}" %></li>
     <li><a href="">RETOUCHES</a></li>
     <li><%= link_to "GRAPHISME", graphismes_path, class: "#{'current-list' if current_page?(graphismes_path)}"  %></li>
@@ -13,12 +13,11 @@
       </a>
     </li>
   </ul>
-  <span class="openBtn" data-action="click->menu-burger#action" data-menu-burger-target='open'>
+  <div class="burger-container" data-action="click->menu-burger#action" data-menu-burger-target='burger'>
     <span class="burger-icon">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span data-menu-burger-target='span1'></span>
+      <span data-menu-burger-target='span2'></span>
+      <span data-menu-burger-target='span3'></span>
     </span>
-  </span>
-  <span class="closeBtn" data-action="click->menu-burger#action" data-menu-burger-target='close'>X</span>
+  </div>
 </nav>
