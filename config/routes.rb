@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # Photographies
   resources :photographies do
-    resources :photographie_contents, only: [:new, :create, :destroy]
+    resources :contents, only: [:new, :create, :destroy]
   end
 
   # Graphismes

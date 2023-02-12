@@ -8,14 +8,12 @@
       <%= link_to "Modifier", edit_photography_path(@photographie), class: "photographie-add-button" %>
       <%= link_to "Supprimer", photography_path(@photographie), class: "photographie-add-button", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} %>
       <%= link_to "Retour", photographies_path, class: "photographie-add-button" %>
-      <%= link_to "Ajouter des photos", new_photography_photographie_content_path(@photographie), class: "photographie-add-button" %>
+      <%= link_to "Ajouter des photos", new_photography_content_path(@photographie), class: "photographie-add-button" %>
     </div>
   </div>
 </div>
 <div class="grid-photos-container">
-  <% @photographie.photographie_contents.each do |image_content| %>
-    <img src="<%= cl_image_path "photographies/content/" + image_content.photo.key %>" alt="photographie photo">
+  <% @photographie.content&.photos&.each do |photo| %>
+    <%= cl_image_tag photo.key %>
   <% end %>
 </div>
-
-<script></script>
