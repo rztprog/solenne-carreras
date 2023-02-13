@@ -19,6 +19,34 @@ $column: 3;
   }
 }
 
+.grid-photo-wrapper{
+  position: relative;
+}
+
+.linked{
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+
+  background-color: #000;
+  font-size: 20px;
+  padding: 15px;
+  border-radius: 0 0 8px 0;
+
+  i{
+    color: #fff;
+  }
+
+  &:hover{
+    background-color: #444;
+    i{
+      color: red;
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .grid-photos-container {
     -webkit-column-count: $column - 1;

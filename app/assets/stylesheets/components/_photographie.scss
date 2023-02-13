@@ -4,18 +4,23 @@
   justify-content: center;
 }
 
+.photographie-show{
+  .photographie-container{
+    justify-content: start;
+  }
+}
+
 .photographie-container-elements{
   display: flex;
   flex-direction: column;
-  width: 1200px;
 }
 
 .photographie-buttons-container{
   display: flex;
   flex-wrap: wrap;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 15px 0;
-  margin-bottom: calc(15px * 2);
+  // padding: 15px 0;
+  margin-bottom: calc((15px * 2) - 8px);
 }
 
 .photographie-add-button{
@@ -59,6 +64,10 @@
   width: 100%;
 }
 
+.photographie-grid-wrapper{
+  position: relative;
+}
+
 .photographie-photo-name{
   font-size: 1.5em;
   padding: 20px 0;
@@ -70,7 +79,6 @@
   overflow: hidden;
   height: 250px;
 }
-
 
 .photographie-photo{
   width: 100%;
@@ -112,9 +120,49 @@
   }
 }
 
-
 .delete-photographie-button{
   position: absolute;
+}
+
+.photographie-navigation{
+  display: flex;
+  margin: 80px 0;
+
+  a{
+    text-decoration: none;
+    color: #000;
+    font-size: 2.5rem;
+  }
+
+  a:hover{
+    color: #bbb;
+  }
+}
+
+.photographie-navigation-previous{
+  margin-left: 100px;
+}
+
+.photographie-navigation-next{
+  margin-right: 100px;
+}
+
+.photographie-navigation-push-between{
+  justify-content: space-between;
+}
+
+.photographie-navigation-push-right{
+  justify-content: end;
+}
+
+@media screen and (max-width: 1200px)  {
+  .photographie-navigation{
+    margin: 40px 0;
+
+    a{
+      font-size: 1.8rem;
+    }
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -137,6 +185,14 @@
 
   .photographie-photo-container{
     height: 400px;
+  }
+
+  .photographie-navigation-previous{
+    margin-left: 50px;
+  }
+  
+  .photographie-navigation-next{
+    margin-right: 50px;
   }
 }
 
