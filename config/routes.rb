@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # Root
   root to: "main#index"
 
+  # Unique
+  delete 'photos/:id/purge/:photographie_id', to: 'photos#purge', as: 'purge_photo_contents'
+
   # Contact
   resources :contacts, only: [:new, :create]
   get '/contacts', to: 'contacts#new', as: 'contact'
@@ -14,7 +17,8 @@ Rails.application.routes.draw do
 
   # Photographies
   resources :photographies do
-    resources :contents, only: [:new, :create, :destroy]
+    resources :contents do
+    end
   end
 
   # Graphismes

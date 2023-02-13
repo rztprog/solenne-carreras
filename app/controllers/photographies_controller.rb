@@ -1,13 +1,15 @@
 class PhotographiesController < ApplicationController
-  before_action :set_photographie, only: [:show, :edit, :update, :destroy]
+  before_action :set_photographie, only: [:show, :edit, :update, :destroy, :photos, :purge_photos]
 
   def index
     @photographies = Photographie.all
   end
 
   def show
+    @previous_photographie = Photographie.where("id < ?", @photographie.id).last
+    @next_photographie = Photographie.where("id > ?", @photographie.id).first
   end
-    
+
   def new
     @photographie = Photographie.new
   end
@@ -42,6 +44,6 @@ class PhotographiesController < ApplicationController
   end
 
   def photographie_params
-    params.require(:photographie).permit(:name, :description, :photo)
+    params.require(:photographie).permit(:name, :description, :photo, photo: [])
   end
 end
