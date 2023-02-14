@@ -4,8 +4,6 @@ class Photographie < ApplicationRecord
   validates :photo, presence: true
 
   has_many :contents, dependent: :destroy
-  # has_one :content, optional: true
 
   has_one_attached :photo, service: :cloudinary_photographies
-  # has_one_attached :photos, service: :cloudinary_photographie_contents
 end

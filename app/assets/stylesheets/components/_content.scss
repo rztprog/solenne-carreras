@@ -24,26 +24,25 @@ $column: 3;
 }
 
 .linked{
+  display: flex; // Strip the margin between buttons
   position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
   text-decoration: none;
 
-  background-color: #000;
-  font-size: 20px;
-  padding: 15px;
-  border-radius: 0 0 8px 0;
-
   i{
+    background-color: #000;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 0 0 8px 0;
     color: #fff;
-  }
 
-  &:hover{
+  }
+  
+  i:hover{
     background-color: #444;
-    i{
-      color: red;
-    }
+    color: red;
   }
 }
 

@@ -16,11 +16,11 @@ class PhotographiesController < ApplicationController
     
   def create
     @photographie = Photographie.new(photographie_params)
-
+  
     if @photographie.save
-      redirect_to photography_path(@photographie)
-    else      
-      render :new, status: :unprocessable_entity
+        redirect_to photography_path(@photographie)
+    else
+        render :new, status: :unprocessable_entity
     end
   end
 
@@ -44,6 +44,6 @@ class PhotographiesController < ApplicationController
   end
 
   def photographie_params
-    params.require(:photographie).permit(:name, :description, :photo, photo: [])
+    params.require(:photographie).permit(:name, :description, :photo)
   end
 end
