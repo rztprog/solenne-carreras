@@ -19,9 +19,23 @@
         <%= f.label "Description" %>
         <%= f.text_field :description, class: "formfor-field" %>
         <%= f.label "Photo principal" %>
-        <%= f.file_field :photo, as: :file %>
+        <%= f.file_field :photo, as: :file,
+        data:{ controller: "photo-preview", action: "change->photo-preview#preview"} %>
 
-        <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
+        <div 
+        id="photo-previews" 
+        class="photographie_preview" 
+        data-controller="photo-preview" 
+        data-action="photo-preview#preview"
+        >
+        </div>
+
+        <%= f.submit "Enregistrer", 
+        data: { disabled_with: false,
+        controller: "photo-preview",
+        action:"click->photo-preview#clearPreviews" 
+        },
+        class: "form-submit-button formfor-button" %>
         <%= link_to photographies_path do %>
           <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
         <% end %>

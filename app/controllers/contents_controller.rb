@@ -37,25 +37,6 @@ class ContentsController < ApplicationController
     end
   end
 
-  # def purge_photo
-  #   @contents = Content.find(params[:id])
-
-  #   @photographie = @contents.photographie
-  #   @contents.photos.purge
-  #   redirect_to photography_path(@photographie)
-  # end
-
-  # def purge_photos
-  #   @contents = Content.all
-  
-  #   @photographie = @contents.photographie
-  #   @contents.each do |content|
-  #     content.photos.purge
-  #   end
-  
-  #   redirect_to photography_path(@photographie)
-  # end
-
   def edit
   end
 
