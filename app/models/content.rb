@@ -8,6 +8,15 @@ class Content < ApplicationRecord
 
   private
 
+  def photo_attachement(index)
+    target = photos[index]
+    return unless photos.attached?
+
+    if target.image?
+      target.variant(resize_to_limit: [150, 150]).processed
+    end
+  end
+
   def validate_photos_filetype
     return unless photos.attached?
   

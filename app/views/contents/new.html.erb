@@ -14,10 +14,24 @@
       <div class="formfor-form-container">
         <h1>Ajouter des photos à <%= @photographie.name %></h1>
         <hr>
-        <%= f.label "Photos" %>
-        <%= f.file_field :photos, as: :file, multiple: true %>
+        <%= f.label "photos" %>
+        <%= f.file_field :photos, as: :file, multiple: true,
+        data:{ controller: "photo-preview", action: "change->photo-preview#preview"} %>
 
-        <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
+        <div 
+        id="photo-previews" 
+        class="content-previews" 
+        data-controller="photo-preview" 
+        data-action="photo-preview#preview"
+        >
+        </div>
+
+        <%= f.submit "Enregistrer", 
+        data: { disabled_with: false,
+        controller: "photo-preview",
+        action:"click->photo-preview#clearPreviews" 
+        },
+        class: "form-submit-button formfor-button" %>
         <%= link_to photography_path(@photographie) do %>
           <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
         <% end %>
