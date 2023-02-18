@@ -1,0 +1,41 @@
+<div class="form-part">
+  <div class="formfor-container">
+    <%= form_for [@graphisme, @element] do |f| %>
+      <% if @element.errors.any? %>
+        <div class="error-container">
+          <h2 class="error-title">Attention il y a <%= pluralize(@element.errors.count, "erreur") %> :</h2>
+          <ul class="error-list">
+            <% @element.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="formfor-form-container">
+        <h1>Ajouter des photos à <%= @graphisme.name %></h1>
+        <hr>
+        <%= f.label "photos" %>
+        <%= f.file_field :photos, as: :file, multiple: true,
+        data:{ controller: "photo-preview", action: "change->photo-preview#preview"} %>
+
+        <div 
+        id="photo-previews" 
+        class="content-previews" 
+        data-controller="photo-preview" 
+        data-action="photo-preview#preview"
+        >
+        </div>
+
+        <%= f.submit "Enregistrer", 
+        data: { disabled_with: false,
+        controller: "photo-preview",
+        action:"click->photo-preview#clearPreviews" 
+        },
+        class: "form-submit-button formfor-button" %>
+        <%= link_to graphisme_path(@graphisme) do %>
+          <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
