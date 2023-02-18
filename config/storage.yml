@@ -22,6 +22,10 @@ cloudinary_graphismes:
   service: Cloudinary
   folder: <%= Rails.env %>/solenne-carreras/graphismes
 
+cloudinary_graphisme_elements:
+  service: Cloudinary
+  folder: <%= Rails.env %>/solenne-carreras/graphismes/element
+
 # Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
 #   service: S3
