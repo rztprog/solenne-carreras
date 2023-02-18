@@ -1,17 +1,33 @@
-<div class="formfor-container">
-  <%= form_for @graphisme do |f| %>
-    <div class="formfor-form-container">
-      <h1>Modification </h1>
-      <hr>
-      <%= f.label "Nom" %>
-      <%= f.text_field :name, class: "formfor-field" %>
-      <%= f.label "Photo principal" %>
-      <%= f.file_field :photo, as: :file %>
+<div class="form-part">
+  <div class="formfor-container">
+    <%= form_for @graphisme do |f| %>
+      <div class="formfor-form-container">
+        <h1>Modification </h1>
+        <hr>
+        <%= f.label "Nom" %>
+        <%= f.text_field :name, class: "formfor-field" %>
+        <%= f.label "Photo principal" %>
+        <%= f.file_field :photo, as: :file,
+        data:{ controller: "photo-preview", action: "change->photo-preview#preview"} %>
 
-      <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
-      <%= link_to graphismes_path do %>
-        <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
-      <% end %>
-    </div>
-  <% end %>
+        <div 
+        id="photo-previews" 
+        class="photographie_preview" 
+        data-controller="photo-preview" 
+        data-action="photo-preview#preview"
+        >
+        </div>
+
+        <%= f.submit "Enregistrer", 
+        data: { disabled_with: false,
+        controller: "photo-preview",
+        action:"click->photo-preview#clearPreviews" 
+        },
+        class: "form-submit-button formfor-button" %>
+        <%= link_to graphismes_path do %>
+          <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
