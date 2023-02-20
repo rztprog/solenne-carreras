@@ -55,7 +55,7 @@ export default class extends Controller {
     element = document.createElement("div");
     
     // If is not content_photos its photographie_photo
-    if (document.getElementById("content_photos") == null) {
+    if (document.getElementById("photographie_photo") != null || document.getElementById("graphisme_photo") != null) {
       element.classList.add("photographie-image-container", "file-removal");
     } else {
       element.classList.add("photo-image-container", "file-removal");
@@ -65,8 +65,8 @@ export default class extends Controller {
 
     cancelUploadButton = document.createElement("div");
 
-    if (document.getElementById("photographie_photo") != null) {
-      cancelUploadButton.classList.add("cancel-upload-button-photographie");
+    if (document.getElementById("photographie_photo") != null || document.getElementById("graphisme_photo") != null) {
+      cancelUploadButton.classList.add("cancel-upload-button-new");
     } else {
       cancelUploadButton.classList.add("cancel-upload-button");
     }
@@ -94,6 +94,14 @@ export default class extends Controller {
     // If is not content_photos its photographie_photo
     if (fileInput == null) {
       fileInput = document.getElementById("photographie_photo");
+    }
+
+    if (fileInput == null) {
+      fileInput = document.getElementById("element_photos");
+    }
+
+    if (fileInput == null) {
+      fileInput = document.getElementById("graphisme_photo");
     }
 
     let files = fileInput.files;
