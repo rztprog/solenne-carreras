@@ -6,10 +6,11 @@ class Contact < MailForm::Base
 
   def headers
     { 
-      to: "l.broion@ħotmail.fr", # change this to be the email you want sent to
-      subject: "Solenne Carreras Contact",
-      from: "admin@yourdomain.com",  # change this to be the email it is coming from
-      reply_to: %("#{name}" <#{email}>) 
+      to: "spitemplar@gmail.com", # change this to be the email you want sent to
+      subject: "Solenne-Carreras - Nouveau message de #{surname}",
+      # Changer le mail dans l'environement de development
+      from: %("#{name} #{surname}" <#{email}),  # change this to be the email it is coming from
+      reply_to: %("#{name} #{surname}" <#{email}>) 
     }
   end
 end
