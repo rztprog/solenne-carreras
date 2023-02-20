@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   root to: "main#index"
 
   # Unique
-  delete 'photos/:id/purge/:photographie_id', to: 'photos#purge', as: 'purge_photo_contents'
-  delete 'photos/:id/purge/:graphisme_id', to: 'photos#purge', as: 'purge_photo_elements'
+  delete 'photos/:id/purge/photographies/:photographie_id', to: 'photos#purge_photographie', as: 'purge_photo_contents'
+  delete 'photos/:id/purge/graphismes/:graphisme_id', to: 'photos#purge_graphisme', as: 'purge_photo_elements'
 
   # Contact
   resources :contacts, only: [:new, :create]
