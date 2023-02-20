@@ -1,12 +1,37 @@
-<div class="graphisme-show-intro">
-  <p><%= @graphisme.name %></p>
-</div>
-<div class="photographie-container">
-  <div class="photographie-container-elements">
-    <div class="photographie-buttons-container">
-      <%= link_to "Modifier", edit_graphisme_path(@graphisme), class: "photographie-add-button" %>
-      <%= link_to "Supprimer", graphisme_path(@graphisme), class: "photographie-add-button", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} %>
-      <%= link_to "Retour", graphismes_path, class: "photographie-add-button" %>
+<div class="photographie-show">
+  <div class="graphisme-show-intro">
+    <p><%= @graphisme.name %></p>
+  </div>
+  <div class="photographie-container">
+    <div class="photographie-container-elements">
+      <div class="photographie-buttons-container">
+        <%= link_to graphismes_path, class: "photographie-add-button" do %>
+          <i class="fas fa-undo-alt"></i> Retour
+        <% end %>
+        <%= link_to new_graphisme_element_path(@graphisme), class: "photographie-add-button" do %>
+          <i class="fa-solid fa-plus"></i> Ajouter des photos
+        <% end %>    
+      </div>
     </div>
+  </div>
+  <div class="grid-photos-container">
+    <% @graphisme.elements&.each do |element| %>
+      <% element.photos&.each do |photo| %>
+        <div class="grid-photo-wrapper">
+          <img src="<%= cl_image_path "graphismes/element/" + photo.key %>" alt="graphisme photos">
+          <%= link_to purge_photo_elements_path(photo, @graphisme), class: "linked", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="photographie-navigation <%= (@next_graphisme.present? && !@previous_graphisme.present?) ? "photographie-navigation-push-right" : "photographie-navigation-push-between" %>">
+    <% if @previous_graphisme.present? %>
+      <%= link_to "< " + @previous_graphisme.name, @previous_graphisme, class: "photographie-navigation-previous" %>
+    <% end %>
+    <% if @next_graphisme.present? %>
+      <%= link_to @next_graphisme.name + " >", @next_graphisme, class: "photographie-navigation-next" %>
+    <% end %>
   </div>
 </div>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # Unique
   delete 'photos/:id/purge/:photographie_id', to: 'photos#purge', as: 'purge_photo_contents'
+  delete 'photos/:id/purge/:graphisme_id', to: 'photos#purge', as: 'purge_photo_elements'
 
   # Contact
   resources :contacts, only: [:new, :create]
@@ -17,10 +18,11 @@ Rails.application.routes.draw do
 
   # Photographies
   resources :photographies do
-    resources :contents do
-    end
+    resources :contents
   end
 
   # Graphismes
-  resources :graphismes
+  resources :graphismes do
+    resources :elements
+  end
 end

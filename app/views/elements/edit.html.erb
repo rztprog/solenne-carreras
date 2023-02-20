@@ -1,0 +1,17 @@
+<div class="form-part">
+  <div class="formfor-container">
+    <%= form_for [@graphisme, @element] do |f| %>
+      <div class="formfor-form-container">
+        <h1>Modifier des photos à <%= @graphisme.name %></h1>
+        <hr>
+        <%= f.label "Photos" %>
+        <%= f.file_field :photos, as: :file, multiple: true %>
+
+        <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
+        <%= link_to graphisme_path(@graphisme) do %>
+          <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

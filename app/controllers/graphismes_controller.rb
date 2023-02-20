@@ -6,6 +6,8 @@ class GraphismesController < ApplicationController
   end
 
   def show
+    @previous_graphisme = Graphisme.where("id < ?", @graphisme.id).last
+    @next_graphisme = Graphisme.where("id > ?", @graphisme.id).first
   end
     
   def new
