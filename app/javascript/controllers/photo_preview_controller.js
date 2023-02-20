@@ -107,6 +107,10 @@ export default class extends Controller {
     let files = fileInput.files;
     let filesArray = Array.from(files);
 
+    if (filesArray.length - 1 == 0) {
+      document.getElementById("photo-previews").setAttribute("style", "display: none");
+    }
+
     filesArray = filesArray.filter((file) => {
       let filename = target.dataset.filename;
       return file.name !== filename;
