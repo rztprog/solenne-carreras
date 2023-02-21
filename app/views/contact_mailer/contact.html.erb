@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+      }
+
+      .heading {
+        margin: 0 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .field {
+        margin-bottom: 10px;
+        display: flex;
+      }
+
+      .field label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body style="background-color: #f6f6f6; line-height: 1.5; color: #333333; font-size: 16px; font-family: Arial, sans-serif; padding: 50px 0;">
+    <div class="container" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <h1 class="heading">Nouveau message de <%= @data.surname %> <%= @data.name %> sur Solenne-Carreras</h1>
+
+      <div class="field">
+        <label for="name">Nom: </label>
+        <span>Nom: <%= @data.name %></span>
+      </div>
+
+      <div class="field">
+        <label for="surname">Prénom: </label>
+        <span><%= @data.surname %></span>
+      </div>
+
+      <div class="field">
+        <label for="email">Email: </label>
+        <span><%= @data.email %></span>
+      </div>
+
+      <div style="border-bottom: 1px solid #ccc; margin: 0 0 20px;"></div>
+
+      <div class="field">
+        <div style="font-size: 1.6em"><%= @data.message %></div>
+      </div>
+    </div>
+  </body>
+</html>
