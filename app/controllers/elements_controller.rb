@@ -18,6 +18,7 @@ class ElementsController < ApplicationController
   end
 
   def destroy
+    Cloudinary::Uploader.destroy(@element.photo.key)
     @element.destroy
     redirect_to graphisme_path(@graphisme)
   end
