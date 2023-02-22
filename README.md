@@ -24,7 +24,7 @@ Le site internet est construit en utilisant les technologies suivantes :
 - HTML/CSS(SASS) : pour la mise en forme du site
 
 Le site utilise également des bibliothèques et des outils externes :
-- PostgreSQL : un système de gestion de base de données relationnelle
+- SQLite3 : un système de gestion de base de données relationnelle
 
 ## Déploiement
 
