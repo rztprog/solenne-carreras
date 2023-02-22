@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(params[:contact])
     @contact.request = request
-    if @contact.deliver
+    if ContactMailer.contact(@contact).deliver
       redirect_to action: :sent
     else
       render :new, status: :unprocessable_entity

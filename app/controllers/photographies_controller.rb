@@ -33,6 +33,7 @@ class PhotographiesController < ApplicationController
   end
 
   def destroy
+    Cloudinary::Uploader.destroy(@photographie.photo.key)
     @photographie.destroy
     redirect_to photographies_path, status: :see_other
   end

@@ -18,23 +18,9 @@ class ContentsController < ApplicationController
   end
 
   def destroy
+    Cloudinary::Uploader.destroy(@content.photo.key)
     @content.destroy
     redirect_to photography_path(@photographie)
-  end
-
-  def purge_photos
-    @photographie = Photographie.find(params[:id])
-    if @photographie.present?
-      @contents = @photographie.contents.all
-  
-      @contents.each do |content|
-        content.destroy
-      end
-  
-      redirect_to photography_path(@photographie)
-    else
-      redirect_to root_path
-    end
   end
 
   def edit
