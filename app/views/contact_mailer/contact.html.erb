@@ -28,12 +28,16 @@
         margin-bottom: 5px;
         font-weight: bold;
       }
+
+      .field span{
+        padding-left: 8px;
+      }
     </style>
   </head>
   <body style="background-color: #f6f6f6; line-height: 1.5; color: #333333; font-size: 16px; font-family: Arial, sans-serif; padding: 50px 0;">
     <div class="container" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-      <h1 class="heading">Nouveau message de <%= @data.surname %> <%= @data.name %> sur Solenne-Carreras</h1>
-
+      <h1 class="heading"><%= message.subject %></h1>
+      
       <div class="field">
         <label for="name">Nom: </label>
         <span> <%= @data.name %></span>
