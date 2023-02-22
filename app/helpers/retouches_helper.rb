@@ -1,0 +1,2 @@
+module RetouchesHelper
+end
