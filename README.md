@@ -1,35 +1,35 @@
 # Solenne Carreras - Portfolio Website
 
-Ce repository contient le code source pour le site internet de Solenne Carreras, photographe professionnelle. Le site est construit en utilisant Ruby on Rails pour le backend et JavaScript pour le frontend.
+This repository contains the source code for Solenne Carreras' professional photography portfolio website. The site is built using Ruby on Rails for the backend and JavaScript for the frontend.
 
-## Objectif du site
+## Site Objective
 
-Le site internet de Solenne Carreras est un portfolio en ligne qui présente ses projets photographiques. Les visiteurs peuvent parcourir ses projets, consulter ses photographies et prendre contact avec elle pour des demandes de projet.
+Solenne Carreras' website is an online portfolio showcasing her photography projects. Visitors can browse through her projects, view her photographs, and contact her for project inquiries.
 
-## Structure du site
+## Site Structure
 
-Le site internet est composé de plusieurs pages :
-- Accueil : une page d'accueil avec un titre et des photos, un texte qui déffile de droite à gauche, un caroussel de ses réalisations ainsi que ses services
-- Photographie : une galerie de projets photographiques triés par projets
-- Retouches : Un code javascript pour montrer un avant/après sur une photographie après retouche sur photoshop 
-- Contact : un formulaire de contact pour permettre aux visiteurs de prendre contact avec elle
+The website is composed of several pages:
+- Home: a landing page with a title and photos, a text that scrolls from right to left, a carousel of her projects, and her services
+- Photography: a gallery of photography projects sorted by category
+- Retouching: a JavaScript code to show before/after on a photograph after retouching on Photoshop
+- Contact: a contact form for visitors to reach out to her
 
-Le site est responsive et s'adapte aux différentes tailles d'écran.
+The site is responsive and adapts to different screen sizes.
 
-## Technologies utilisées
+## Technologies Used
 
-Le site internet est construit en utilisant les technologies suivantes :
-- Ruby on Rails : un framework pour le backend web
-- JavaScript : pour le développement frontend et backend
-- HTML/CSS(SASS) : pour la mise en forme du site
+The website is built using the following technologies:
+- Ruby on Rails: a web backend framework
+- JavaScript: for frontend and backend development
+- HTML/CSS(SASS): for site styling
 
-Le site utilise également des bibliothèques et des outils externes :
-- SQLite3 : un système de gestion de base de données relationnelle
+The site also uses external libraries and tools:
+- PostgreSQL: a relational database management system
 
-## Déploiement
+## Deployment
 
-Le site internet de Solenne Carreras est déployé sur [Plateforme] à l'adresse suivante : https://solenne-carreras.fr/
+Solenne Carreras' website is deployed on [Platform] at the following address: https://solenne-carreras.fr/
 
-## Auteur
+## Author
 
-Le site internet de Solenne Carreras a été conçu et développé par RZTPROG en 2023.
+Solenne Carreras' website was designed and developed by RZTPROG in 2023.
