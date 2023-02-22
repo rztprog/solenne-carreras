@@ -25,4 +25,7 @@ Rails.application.routes.draw do
   resources :graphismes do
     resources :elements
   end
+
+  # Retouches
+  resources :retouches
 end
