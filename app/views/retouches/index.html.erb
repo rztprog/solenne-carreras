@@ -1,1 +1,18 @@
-<p>index retouches</p>
+<div class="photographie-container">
+  <div class="photographie-container-elements">
+    <div class="photographie-buttons-container">
+      <%= link_to new_retouch_path, class: "photographie-add-button" do %>
+        <i class="fa-solid fa-plus"></i> Ajouter
+      <% end %>
+    </div>
+    <div class="photographie-grid-container">
+      <div class="photographie-grid">
+        <% @retouches&.each do |retouche| %>
+          <%= link_to retouch_path(retouche), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer #{photographie.name}"} do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

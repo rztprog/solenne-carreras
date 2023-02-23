@@ -6,6 +6,9 @@ class RetouchesController < ApplicationController
   end
 
   def show
+    if @retouche == nil 
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def new
@@ -16,7 +19,7 @@ class RetouchesController < ApplicationController
     @retouche = Retouche.new(retouche_params)
   
     if @retouche.save
-        redirect_to retouche_path(@retouche)
+        redirect_to retouches_path
     else
         render :new, status: :unprocessable_entity
     end
@@ -39,7 +42,7 @@ class RetouchesController < ApplicationController
   private
 
   def set_retouche
-    @retouche = Photographie.find(params[:id])
+    @retouche = Retouche.last
   end
 
   def retouche_params

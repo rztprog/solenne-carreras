@@ -9,10 +9,11 @@ class Retouche < ApplicationRecord
   private
 
   def validate_photo_filetype
-    return unless photo.attached?
+    return unless before_photo.attached? && after_photo.attached?
 
-    unless photo.image?
-      errors.add(:photo, "must be an image")
+    unless before_photo.image? && after_photo.image?
+      errors.add(:before_photo, "must be an image")
+      errors.add(:after_photo, "must be an image")
     end
   end
 end
