@@ -10,6 +10,10 @@ cloudinary:
   service: Cloudinary
   folder: <%= Rails.env %>/solenne-carreras
 
+cloudinary_retouches:
+  service: Cloudinary
+  folder: <%= Rails.env %>/solenne-carreras/retouches
+
 cloudinary_photographies:
   service: Cloudinary
   folder: <%= Rails.env %>/solenne-carreras/photographies
