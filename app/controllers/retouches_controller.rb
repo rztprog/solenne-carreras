@@ -2,7 +2,7 @@ class RetouchesController < ApplicationController
   before_action :set_retouche, only: [:show, :edit, :update, :destroy]
 
   def index
-    @photographies = Photographie.all
+    @retouches = Retouche.all
   end
 
   def show
