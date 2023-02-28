@@ -29,10 +29,6 @@
     padding-right: 30px;
   }
 
-  li:last-child{
-    padding-right: 0;
-  }
-
   a:hover{
     color: #777;
   }
@@ -81,6 +77,7 @@ li > a{
 
 .navbar-icon{
   transition: 0.2s transform linear;
+  padding-right: 0 !important;
 
   a:after{
     display: none;

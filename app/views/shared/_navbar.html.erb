@@ -13,8 +13,8 @@
       </a>
     </li>
     <% if user_signed_in? %>
-      <li class="nav-item dropdown">
-        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar image" class="avatar dropdown-toggle" data-action="click->avatar-dropdown#action">
+      <li class="nav-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar image" class="avatar" data-action="click->avatar-dropdown#action">
         <div class="dropdownmenu d-none" data-avatar-dropdown-target='dropdown'>
           <%= link_to "Panel", "#", class: "dropdownitem" %>
           <hr>
