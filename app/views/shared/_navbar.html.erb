@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" data-controller="avatar-dropdown">
   <div>
     <%= link_to "Solenne Carreras", root_path, class: "navbar-title-link" %>
   </div>
@@ -12,6 +12,20 @@
         <i class="fa-brands fa-instagram"></i>
       </a>
     </li>
+    <% if user_signed_in? %>
+      <li class="nav-item dropdown">
+        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar image" class="avatar dropdown-toggle" data-action="click->avatar-dropdown#action">
+        <div class="dropdownmenu d-none" data-avatar-dropdown-target='dropdown'>
+          <%= link_to "Panel", "#", class: "dropdownitem" %>
+          <hr>
+          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdownitem" %>
+        </div>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
   </ul>
   <div class="burger-container" data-action="click->menu-burger#action" data-menu-burger-target='burger'>
     <span class="burger-icon">
