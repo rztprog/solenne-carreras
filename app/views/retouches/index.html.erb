@@ -1,0 +1,31 @@
+<div class="photographie-container" data-controller="slider-comparison" data-slider-comparison-target="slider">
+  <div class="retouches-container">
+    <div class="photographie-buttons-container">
+      <%= link_to new_retouch_path, class: "photographie-add-button" do %>
+        <i class="fa-solid fa-plus"></i> Ajouter
+      <% end %>
+    </div>
+    <div class="retouches-container-elements">
+      <% @retouches&.each do |retouche| %>
+        <div class="retouche-grid-wrapper">
+          <div class="linked">
+            <%= link_to edit_retouch_path(retouche), class: "" do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+            <%= link_to retouch_path(retouche), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer la retouche #{retouche.id} ?"} do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+          <div class="img-comp-container">
+            <div class="img-comp-img">
+              <img class="" src="<%= cl_image_path "retouches/" + retouche.after_photo.key %>" alt="retouche photo 1">
+            </div>
+            <div class="img-comp-img img-comp-overlay">
+              <img class="" src="<%= cl_image_path "retouches/" + retouche.before_photo.key %>" alt="retouche photo 2">
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

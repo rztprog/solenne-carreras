@@ -1,5 +1,5 @@
 class PhotographiesController < ApplicationController
-  before_action :set_photographie, only: [:show, :edit, :update, :destroy, :photos, :purge_photos]
+  before_action :set_photographie, only: [:show, :edit, :update, :destroy, :photos]
 
   def index
     @photographies = Photographie.all
@@ -18,9 +18,9 @@ class PhotographiesController < ApplicationController
     @photographie = Photographie.new(photographie_params)
   
     if @photographie.save
-        redirect_to photography_path(@photographie)
+      redirect_to photography_path(@photographie)
     else
-        render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 

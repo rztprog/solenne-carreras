@@ -7,7 +7,7 @@
     </div>
     <div class="photographie-grid-container">
       <div class="photographie-grid">
-        <% @graphismes.each do |graphisme| %>
+        <% @graphismes&.each do |graphisme| %>
           <div class="photographie-grid-wrapper">
             <div class="linked">
               <%= link_to graphisme_path(graphisme), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer #{graphisme.name}"} do %>

@@ -1,0 +1,19 @@
+<div class="form-part">
+  <div class="formfor-container">
+    <%= form_for @retouche do |f| %>
+      <div class="formfor-form-container">
+        <h1>Modification Retouche <%= @retouche.id %></h1>
+        <hr>
+        <%= f.label "Photo avant" %>
+        <%= f.file_field :before_photo, as: :file %>
+        <%= f.label "Photo après" %>
+        <%= f.file_field :after_photo, as: :file %>
+
+        <%= f.submit "Enregistrer", class: "form-submit-button formfor-button" %>
+        <%= link_to retouches_path do %>
+          <i class="fas fa-undo-alt form-submit-button"> Retour en arriere</i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

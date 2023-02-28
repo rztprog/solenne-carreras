@@ -7,10 +7,10 @@
     </div>
     <div class="photographie-grid-container">
       <div class="photographie-grid">
-        <% @photographies.each do |photographie| %>
+        <% @photographies&.each do |photographie| %>
           <div class="photographie-grid-wrapper">
             <div class="linked">
-              <%= link_to photography_path(photographie), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer #{photographie.name}"} do %>
+              <%= link_to photography_path(photographie), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer #{photographie.name} ?"} do %>
                   <i class="far fa-trash-alt"></i>
               <% end %>
               <%= link_to edit_photography_path(photographie), class: "" do %>
