@@ -43,7 +43,7 @@ class RetouchesController < ApplicationController
   private
 
   def set_retouche
-    @retouche = Retouche.first
+    @retouche = Retouche.find(params[:id])
   end
 
   def retouche_params
