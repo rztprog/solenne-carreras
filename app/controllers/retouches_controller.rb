@@ -1,14 +1,14 @@
 class RetouchesController < ApplicationController
-  before_action :set_retouche, only: [:show, :edit, :update, :destroy]
+  before_action :set_retouche, only: [:edit, :update, :destroy]
 
   def index
     @retouches = Retouche.all
   end
 
   def show
-    if @retouche == nil 
-      render :new, status: :unprocessable_entity
-    end
+    # if @retouche == nil 
+    #   render :new, status: :unprocessable_entity
+    # end
   end
 
   def new
@@ -19,9 +19,9 @@ class RetouchesController < ApplicationController
     @retouche = Retouche.new(retouche_params)
   
     if @retouche.save
-        redirect_to retouches_path
+      redirect_to retouches_path
     else
-        render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -29,20 +29,21 @@ class RetouchesController < ApplicationController
   end
 
   def update
-    @photographie.update(photographie_params)
-    redirect_to photography_path(@photographie)
+    @retouche.update(retouche_params)
+    redirect_to retouches_path
   end
 
-  # def destroy
-  #   Cloudinary::Uploader.destroy(@photographie.photo.key)
-  #   @photographie.destroy
-  #   redirect_to photographies_path, status: :see_other
-  # end
+  def destroy
+    Cloudinary::Uploader.destroy(@retouche.before_photo.key)
+    Cloudinary::Uploader.destroy(@retouche.after_photo.key)
+    @retouche.destroy
+    redirect_to retouches_path, status: :see_other
+  end
 
   private
 
   def set_retouche
-    @retouche = Retouche.last
+    @retouche = Retouche.first
   end
 
   def retouche_params

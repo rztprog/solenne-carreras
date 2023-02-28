@@ -1,7 +1,20 @@
 $height: 600px;
 $width: 500px;
 
+.retouches-container{
+  width: 100%;
+}
+
 .retouches-container-elements{
+  // width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, $width);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.retouche-grid-wrapper{
+  position: relative;
   width: $width;
 }
 
@@ -53,6 +66,7 @@ $width: 500px;
   background-color: #fff;
   opacity: 0.4;
   border-radius: 80%;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 1);
 }
 
 @media screen and (max-width: 900px) {

@@ -18,9 +18,9 @@ class PhotographiesController < ApplicationController
     @photographie = Photographie.new(photographie_params)
   
     if @photographie.save
-        redirect_to photography_path(@photographie)
+      redirect_to photography_path(@photographie)
     else
-        render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
