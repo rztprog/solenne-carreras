@@ -12,7 +12,7 @@
             <%= link_to edit_retouch_path(retouche), class: "" do %>
               <i class="far fa-edit"></i>
             <% end %>
-            <%= link_to retouch_path(retouche), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer la retouche #{retouche.id}"} do %>
+            <%= link_to retouch_path(retouche), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer la retouche #{retouche.id} ?"} do %>
               <i class="far fa-trash-alt"></i>
             <% end %>
           </div>
