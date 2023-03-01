@@ -1,4 +1,5 @@
 class RetouchesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_retouche, only: [:edit, :update, :destroy]
 
   def index

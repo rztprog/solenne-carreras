@@ -1,4 +1,5 @@
 class ElementsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_graphisme, only: [:new, :create, :destroy, :edit, :update]
   before_action :set_element, only: [:edit, :update, :destroy]
 
