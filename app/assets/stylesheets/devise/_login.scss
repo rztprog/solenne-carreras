@@ -1,0 +1,35 @@
+.login-container{
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+.login-modal{
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px 0.1px #ccc;
+  width: 500px;
+	padding: 50px;
+}
+
+.login-input{
+  width: 100%;
+  font-size: 1.4em;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  &:focus {
+    outline: 2px solid #000;
+  }
+}
+
+.login-title,
+.login-field{
+  margin-bottom: 16px;
+}
+
+.login-button{
+  width: 100%;
+  font-size: 1.2em;
+  padding: 15px;
+  cursor: pointer;
+}
