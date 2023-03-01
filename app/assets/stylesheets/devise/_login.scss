@@ -1,6 +1,8 @@
 .login-container{
+  height: calc(100vh - 132px - 111px);
   display: flex;
   justify-content: center;
+  align-items: center;
   font-family: Arial, sans-serif;
 }
 
@@ -10,6 +12,7 @@
 	box-shadow: 0px 0px 5px 0.1px #ccc;
   width: 500px;
 	padding: 50px;
+  margin: 0 50px;
 }
 
 .login-input{
@@ -17,6 +20,7 @@
   font-size: 1.4em;
   border-radius: 2px;
   border: 1px solid #ccc;
+  margin-top: 8px;
   &:focus {
     outline: 2px solid #000;
   }
@@ -32,4 +36,30 @@
   font-size: 1.2em;
   padding: 15px;
   cursor: pointer;
+  background-color: #edfff3;
+  color: #000;
+  border-radius: 8px;
+  border: 1px solid #777;
+
+  &:hover{
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login-modal{
+    padding: 25px;
+    margin: 0 25px;
+  }
+
+  .login-input{
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .login-modal{
+    padding: 12px;
+  }
 }

@@ -57,6 +57,12 @@ li > a{
   }
 }
 
+.nav-item:last-child{
+  a:after{
+    display: none;
+  }
+}
+
 .current-list{
   position: relative;
   text-decoration: none;
