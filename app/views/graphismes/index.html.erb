@@ -11,14 +11,16 @@
       <div class="photographie-grid">
         <% @graphismes&.each do |graphisme| %>
           <div class="photographie-grid-wrapper">
-            <div class="linked">
-              <%= link_to graphisme_path(graphisme), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer #{graphisme.name}"} do %>
-                  <i class="far fa-trash-alt"></i>
-              <% end %>
-              <%= link_to edit_graphisme_path(graphisme), class: "" do %>
-                  <i class="far fa-edit"></i>
-              <% end %>
-            </div>
+            <% if user_signed_in? %>
+              <div class="linked">
+                <%= link_to graphisme_path(graphisme), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer #{graphisme.name}"} do %>
+                    <i class="far fa-trash-alt"></i>
+                <% end %>
+                <%= link_to edit_graphisme_path(graphisme), class: "" do %>
+                    <i class="far fa-edit"></i>
+                <% end %>
+              </div>
+            <% end %>
             <%= link_to graphisme_path(graphisme) do %>
               <div class="photographie-grid-element">
                 <div class="photographie-photo-container">

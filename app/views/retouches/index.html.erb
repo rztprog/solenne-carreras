@@ -10,14 +10,16 @@
     <div class="retouches-container-elements">
       <% @retouches&.each do |retouche| %>
         <div class="retouche-grid-wrapper">
-          <div class="linked">
-            <%= link_to edit_retouch_path(retouche), class: "" do %>
-              <i class="far fa-edit"></i>
-            <% end %>
-            <%= link_to retouch_path(retouche), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer la retouche #{retouche.id} ?"} do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-          </div>
+          <% if user_signed_in? %>
+            <div class="linked">
+              <%= link_to edit_retouch_path(retouche), class: "" do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to retouch_path(retouche), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer la retouche #{retouche.id} ?"} do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          <% end %>
           <div class="img-comp-container">
             <div class="img-comp-img">
               <img class="" src="<%= cl_image_path "retouches/" + retouche.after_photo.key %>" alt="retouche photo 1">

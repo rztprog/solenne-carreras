@@ -9,8 +9,10 @@
         <%= link_to photographies_path, class: "photographie-add-button" do %>
           <i class="fas fa-undo-alt"></i> Retour
         <% end %>
-        <%= link_to new_photography_content_path(@photographie), class: "photographie-add-button" do %>
-          <i class="fa-solid fa-plus"></i> Ajouter des photos
+        <% if user_signed_in? %>
+          <%= link_to new_photography_content_path(@photographie), class: "photographie-add-button" do %>
+            <i class="fa-solid fa-plus"></i> Ajouter des photos
+          <% end %>
         <% end %>
       </div>
     </div>
