@@ -6,6 +6,17 @@ class PhotographiesController < ApplicationController
     @photographies = Photographie.all
   end
 
+  def delete_all
+    @photographies = Photographie.all
+
+    @photographies.each do |photographie|
+      photographie.destroy
+    end
+
+    @photographies.delete_all
+    redirect_to photographies_path, status: :see_other
+  end
+
   def show
     @previous_photographie = Photographie.where("id < ?", @photographie.id).last
     @next_photographie = Photographie.where("id > ?", @photographie.id).first

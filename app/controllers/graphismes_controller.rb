@@ -6,6 +6,17 @@ class GraphismesController < ApplicationController
     @graphismes = Graphisme.all
   end
 
+  def delete_all
+    @graphismes = Graphisme.all
+
+    @graphismes.each do |graphisme|
+      graphisme.destroy
+    end
+
+    @graphismes.delete_all
+    redirect_to graphismes_path, status: :see_other
+  end
+
   def show
     @previous_graphisme = Graphisme.where("id < ?", @graphisme.id).last
     @next_graphisme = Graphisme.where("id > ?", @graphisme.id).first
