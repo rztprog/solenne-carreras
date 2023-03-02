@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def purge_photographie
     photo = ActiveStorage::Attachment.find(params[:id])
     Cloudinary::Uploader.destroy(photo.key)

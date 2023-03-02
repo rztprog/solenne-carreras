@@ -1,0 +1,118 @@
+.login-container{
+  height: calc(100vh - 132px - 111px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.login-modal{
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px 0.1px #ccc;
+  width: 500px;
+	padding: 50px;
+  margin: 0 50px;
+}
+
+.login-input{
+  width: 100%;
+  font-size: 1.4em;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  padding: 5px 10px;
+  &:focus {
+    outline: 2px solid #000;
+  }
+}
+
+.login-title,
+.login-field{
+  margin-bottom: 16px;
+}
+
+.login-button{
+  width: 100%;
+  font-size: 1.2em;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #edfff3;
+  color: #000;
+  border-radius: 8px;
+  border: 1px solid #777;
+
+  &:hover{
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+.flash-error{
+  color: #721c24;
+  background-color: #f8d7da;
+  border: #f5c6cb;
+  position: relative;
+  border-radius: .25rem;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.flash-container{
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  text-align: center;
+}
+
+.devise-link{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  
+  a{
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: #555;
+  }
+}
+
+.devise-link-hr{
+  margin: 1rem 0;
+  color: rgba($color: #000000, $alpha: 0.1);
+}
+
+@media screen and (max-width: 500px) {
+  .login-modal{
+    padding: 25px;
+    margin: 0 25px;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0px 0px 0px 0px #fff;
+  }
+
+  .login-input{
+    font-size: 2em;
+  }
+
+  .flash-container{
+    width: 100%;
+    margin-bottom: 0;
+  }
+  
+  .flash-error{
+    width: 100%;
+    margin: 0 25px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .login-modal{
+    padding: 12px;
+  }
+}

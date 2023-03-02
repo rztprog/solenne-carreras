@@ -86,3 +86,9 @@
     min-height: 400px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .form-part{
+    margin: 0 25px;
+  }
+}

@@ -1,10 +1,12 @@
 <div class="photographie-container">
   <div class="photographie-container-elements">
-    <div class="photographie-buttons-container">
-      <%= link_to new_photography_path, class: "photographie-add-button" do %>
-        <i class="fa-solid fa-plus"></i> Ajouter
-      <% end %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="photographie-buttons-container">
+        <%= link_to new_photography_path, class: "photographie-add-button" do %>
+          <i class="fa-solid fa-plus"></i> Ajouter
+        <% end %>
+      </div>
+    <% end %>
     <div class="photographie-grid-container">
       <div class="photographie-grid">
         <% @photographies&.each do |photographie| %>

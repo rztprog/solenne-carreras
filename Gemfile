@@ -77,3 +77,4 @@ gem 'font-awesome-sass', '~> 6.3'
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1', groups: [:development, :test]
 gem 'cloudinary', '~> 1.24'
 gem 'mail_form', '~> 1.9'
+gem "devise"

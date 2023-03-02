@@ -70,3 +70,9 @@
     flex-direction: column;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .services-grid > div{
+    margin: 0 25px;
+  }
+}
