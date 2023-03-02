@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   delete 'photos/:id/purge/photographies/:photographie_id', to: 'photos#purge_photographie', as: 'purge_photo_contents'
   delete 'photos/:id/purge/graphismes/:graphisme_id', to: 'photos#purge_graphisme', as: 'purge_photo_elements'
 
+  delete 'photographies/:id/delete_all', to: 'photographies#delete_all', as: 'delete_all_photographies'
+  delete 'graphismes/:id/delete_all', to: 'graphismes#delete_all', as: 'delete_all_graphismes'
+
   # Contact
   resources :contacts, only: [:new, :create]
   get '/contacts', to: 'contacts#new', as: 'contact'

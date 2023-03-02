@@ -155,7 +155,15 @@
   justify-content: end;
 }
 
-@media screen and (max-width: 1200px)  {
+.red-button{
+  background-color: rgb(142, 42, 42);
+  
+  &:hover{
+    color: red;
+  }
+}
+
+@media screen and (max-width: 1200px){
   .photographie-navigation{
     margin: 40px 0;
 

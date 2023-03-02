@@ -5,6 +5,11 @@
         <%= link_to new_photography_path, class: "photographie-add-button" do %>
           <i class="fa-solid fa-plus"></i> Ajouter
         <% end %>
+        <% if @photographies.present? %>
+          <%= link_to delete_all_photographies_path(@photographies), class: "photographie-add-button red-button", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer toutes les photographies ?"} do %>
+            <i class="far fa-trash-alt"></i> Supprimer tout
+          <% end %>
+        <% end %>
       </div>
     <% end %>
     <div class="photographie-grid-container">
