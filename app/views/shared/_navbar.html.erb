@@ -14,11 +14,23 @@
     </li>
     <% if user_signed_in? %>
       <li class="nav-item">
-        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar image" class="avatar" data-action="click->avatar-dropdown#action">
-        <div class="dropdownmenu d-none" data-avatar-dropdown-target='dropdown'>
-          <%= link_to "Panel", "#", class: "dropdownitem" %>
-          <hr>
-          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdownitem" %>
+        <div class="signin-desktop">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar image" class="avatar" data-action="click->avatar-dropdown#action">
+          <div class="dropdownmenu d-none" data-avatar-dropdown-target='dropdown'>
+            <%= link_to "Panel", "#", class: "dropdownitem" %>
+            <hr>
+            <%= link_to "Deconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdownitem" %>
+          </div>
+        </div>
+        <div class="signin-mobile" >
+          <!--
+          <p data-action="click->avatar-dropdown#actionmobile">COMPTE</p>
+          <div class="d-none" data-avatar-dropdown-target='dropdownmobile'>
+            <%= link_to "Panel", "#", class: "mobile-li" %>
+            <%= link_to "Deconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "mobile-li" %>
+          </div>
+          -->
+          <%= link_to "DECONNEXION", destroy_user_session_path, data: {turbo_method: :delete}, class: "mobile-li" %>
         </div>
       </li>
     <% else %>
