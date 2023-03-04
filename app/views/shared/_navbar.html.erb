@@ -15,10 +15,8 @@
     <% if user_signed_in? %>
       <li class="nav-item">
         <div class="signin-desktop">
-          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="avatar image" class="avatar" data-action="click->avatar-dropdown#action">
+          <i class="fa-solid fa-arrow-right-to-bracket iconconnect" data-action="click->avatar-dropdown#action"></i>
           <div class="dropdownmenu d-none" data-avatar-dropdown-target='dropdown'>
-            <%= link_to "Panel", "#", class: "dropdownitem" %>
-            <hr>
             <%= link_to "Deconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdownitem" %>
           </div>
         </div>
@@ -32,12 +30,6 @@
           -->
           <%= link_to "DECONNEXION", destroy_user_session_path, data: {turbo_method: :delete}, class: "mobile-li" %>
         </div>
-      </li>
-    <% else %>
-      <li class="nav-item">
-        <%= link_to new_user_session_path, class: "nav-link" do %>
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
-        <% end %>
       </li>
     <% end %>
   </ul>

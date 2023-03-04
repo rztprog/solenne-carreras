@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: '', path_names: { sign_in: 'admin', 
+    sign_out: 'logout',
+    password: 'password',
+    confirmation: 'verification',
+    unlock: 'unlock', 
+    registration: 'r',
+    sign_up: 'sign_up' }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
