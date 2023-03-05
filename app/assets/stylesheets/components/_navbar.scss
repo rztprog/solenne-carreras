@@ -150,6 +150,10 @@ li > a{
   color: #000;
 }
 
+.static-nav{
+  position: static;
+}
+
 // MEDIA QUERIES
 @media screen and (max-width: 1100px) {
   .signin-desktop{
