@@ -1,10 +1,21 @@
 .navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
   padding: 50px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.5em;
-  // transition: left 0.5s ease;
+  width: 100%;
+  transition: 0.6s;
+  z-index: 2;
+  background-color: #fff;
+  transition: 0.6s ease;
+}
+
+.sticky-nav{
+  padding: 20px 100px;
 }
 
 .navbar-title-link,
@@ -22,6 +33,7 @@
   align-items: center;
   font-family: "degular-thin";
   font-weight: 400;
+  transition: 0.6s ease;
   
   li{
     display: block;
@@ -137,6 +149,10 @@ li > a{
 .signin-mobile > a{
   text-decoration: none;
   color: #000;
+}
+
+.static-nav{
+  position: static;
 }
 
 // MEDIA QUERIES
