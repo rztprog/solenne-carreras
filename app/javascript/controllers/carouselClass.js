@@ -63,6 +63,12 @@ export class Carousel {
     return div;
   }
 
+  createIconWithClass (className) {
+    let icon = document.createElement('i');
+    icon.setAttribute('class', className);
+    return icon;
+  }
+
   setStyle () {
     let ratio = this.items.length / this.slidesVisible;
     this.container.style.width = (ratio * 100) + "%";
@@ -73,8 +79,14 @@ export class Carousel {
   }
 
   createNavigation() {
-    let prevButton = this.createDivWithClass("carousel-prev");
-    let nextButton = this.createDivWithClass("carousel-next");
+    let prevButton = this.createDivWithClass("carousel-prev carouse-button");
+    let nextButton = this.createDivWithClass("carousel-next carouse-button");
+
+    let iconRightToLeft = this.createIconWithClass("fa-solid fa-arrow-left-long");
+    let iconLeftToRight = this.createIconWithClass("fa-solid fa-arrow-right-long");
+
+    prevButton.appendChild(iconRightToLeft);
+    nextButton.appendChild(iconLeftToRight);
 
     this.root.appendChild(prevButton);
     this.root.appendChild(nextButton);
