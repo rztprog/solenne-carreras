@@ -1,6 +1,12 @@
 // @import "swiper/swiper-min.css";
 // Voir pour import swiper ici
 
+.carousel{
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+
 .carousel-part{
   height: 100vh;
   display: flex;
@@ -13,25 +19,9 @@
   height: 500px;
 }
 
-.carousel1{
-  color: #fff;
-}
-
-.item{
-  width: 500px;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel{
-  position: relative;
-  overflow: hidden;
-}
 
 .carousel-container{
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease-in-out;
   transform: translate3d(0, 0, 0);
 }
 
@@ -48,10 +38,18 @@
   align-items: center;
 }
 
-.carouse-button{
+.carousel-button{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.item{
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #000;
 }
 
 .carousel-next,
@@ -60,6 +58,7 @@
   width: 60px;
   height: 60px;
   background-color: #000;
+  color: #fff;
   border-radius: 50%;
   opacity: 0.7;
   top: 50%;

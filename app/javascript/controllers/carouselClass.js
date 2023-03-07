@@ -15,10 +15,8 @@ export class Carousel {
     this.root.setAttribute("tabindex", "0");
     this.container = this.createDivWithClass("carousel-container");
 
-
     this.root.appendChild(this.container);
     this.element.appendChild(this.root);
-
 
     this.items = children.map((child) => {
       let item = this.createDivWithClass("carousel-item");
@@ -26,6 +24,10 @@ export class Carousel {
       this.container.appendChild(item);
       return item;
     })
+
+    // Permet de ne pas voir les images au chargement
+    this.element.style.display = "block";
+    this.root.style.display = "block";
 
     this.setStyle();
     this.createNavigation();
@@ -79,8 +81,8 @@ export class Carousel {
   }
 
   createNavigation() {
-    let prevButton = this.createDivWithClass("carousel-prev carouse-button");
-    let nextButton = this.createDivWithClass("carousel-next carouse-button");
+    let prevButton = this.createDivWithClass("carousel-prev carousel-button");
+    let nextButton = this.createDivWithClass("carousel-next carousel-button");
 
     let iconRightToLeft = this.createIconWithClass("fa-solid fa-arrow-left-long");
     let iconLeftToRight = this.createIconWithClass("fa-solid fa-arrow-right-long");
