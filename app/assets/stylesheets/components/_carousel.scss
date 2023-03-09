@@ -3,12 +3,12 @@
 
 .carousel{
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   display: none;
 }
 
 .carousel-part{
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
 }
