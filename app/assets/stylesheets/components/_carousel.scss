@@ -1,15 +1,16 @@
 // @import "swiper/swiper-min.css";
 // Voir pour import swiper ici
 
-.carousel-part{
-  height: 100vh;
-  display: flex;
-  align-items: center;
+.carousel{
+  position: relative;
+  overflow: hidden;
+  display: none;
 }
 
-.item{
+.carousel-part{
+  height: 80vh;
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .image-carousel{
@@ -18,28 +19,89 @@
   height: 500px;
 }
 
+
+.carousel-container{
+  transition: transform 0.3s ease-in-out;
+  transform: translate3d(0, 0, 0);
+}
+
+.carousel-container::after{
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.carousel-item{
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item{
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #000;
+}
+
+.carousel-next,
+.carousel-prev{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  top: 50%;
+  margin-top: -20px;
+  right: 25px;
+  font-size: 1.4em;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.carousel-next:hover,
+.carousel-prev:hover{
+  opacity: 1;
+}
+
+.carousel-prev{
+  // /* right: auto; */
+  left: 25px;
+}
+
+
 // MEDIA QUERIES
-@media screen and (max-width: 1600px) {
-  .image-carousel{
-    object-fit: cover;
-    width: 350px;
-    height: 350px;
-  }
-}
+// @media screen and (max-width: 1600px) {
+//   .image-carousel{
+//     object-fit: cover;
+//     width: 350px;
+//     height: 350px;
+//   }
+// }
 
-@media screen and (max-width: 1100px) {
-  .image-carousel{
-    object-fit: cover;
-    width: 220px;
-    height: 220px;
-  }
-}
+// @media screen and (max-width: 1100px) {
+//   .image-carousel{
+//     object-fit: cover;
+//     width: 220px;
+//     height: 220px;
+//   }
+// }
 
-@media screen and (max-width: 730px) {
-  .image-carousel{
-    object-fit: cover;
-    width: 500px;
-    height: 500px;
-  }
-}
+// @media screen and (max-width: 730px) {
+//   .image-carousel{
+//     object-fit: cover;
+//     width: 500px;
+//     height: 500px;
+//   }
+// }
 
