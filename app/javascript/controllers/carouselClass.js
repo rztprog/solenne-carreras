@@ -3,7 +3,8 @@ export class Carousel {
     this.element = element;
     this.options = Object.assign({}, {
       slidesToScroll: 1,
-      slidesVisible: 1
+      slidesVisible: 1,
+      infinite: false
     }, options);
     let children = [].slice.call(element.children);
 
@@ -21,9 +22,20 @@ export class Carousel {
     this.items = children.map((child) => {
       let item = this.createDivWithClass("carousel-item");
       item.appendChild(child);
-      this.container.appendChild(item);
       return item;
     })
+
+    if (this.options.infinite) {
+      this.offset = this.options.slidesVisible * 2;
+      this.items = [
+        ...this.items.slice(this.items.length - this.offset).map(item => item.cloneNode(true)),
+        ...this.items,
+        ...this.items.slice(0, this.offset).map(item => item.cloneNode(true))
+      ]
+      this.gotoItem(this.offset, false, false);
+    }
+
+    this.items.forEach(item => this.container.appendChild(item));
 
     // Permet de ne pas voir les images au chargement
     this.element.style.display = "block";
@@ -42,6 +54,10 @@ export class Carousel {
         this.prevPic();
       }
     })
+
+    if (this.options.infinite) {
+      this.container.addEventListener('transitionend', this.resetInfinite.bind(this));
+    }
   }
 
   onWindowResize () {
@@ -105,15 +121,33 @@ export class Carousel {
     this.gotoItem(this.currentItem - this.slidesToScroll, true);
   }
 
-  gotoItem (index, previewPress){
+  gotoItem (index, previewPress, animation = true){
     if (index < 0) {
       index = this.items.length - this.slidesVisible;
     } else if (index >= this.items.length || this.items[this.currentItem + this.slidesVisible] === undefined)  {
       previewPress ? index : index = 0;
     }
     let translateX = index * -100 / this.items.length;
+
+    if (animation === false) {
+      this.container.style.transition = "none";
+    }
     this.container.style.transform = `translate3D(${translateX}%, 0, 0)`;
+
+    this.container.offsetHeight // Repaint
+    if (animation === false) {
+      this.container.style.transition = "";
+    }
+
     this.currentItem = index;
+  }
+
+  resetInfinite () {
+    if(this.currentItem <= this.options.slidesToScroll) {
+      this.gotoItem(this.currentItem + (this.items.length - 2 * this.offset), false, false)
+    } else if (this.currentItem >= this.items.length - this.offset) {
+      this.gotoItem(this.currentItem - (this.items.length - 2 * this.offset), false, false)
+    }
   }
 
   get slidesToScroll () {

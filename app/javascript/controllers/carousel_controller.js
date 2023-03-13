@@ -8,7 +8,8 @@ export default class extends Controller {
     new Carousel(this.carouselHomeTarget, {
       slidesToScroll: 1,
       slidesVisible: 3,
-      loop: false
+      loop: false,
+      infinite: true
     });
   }
 }
