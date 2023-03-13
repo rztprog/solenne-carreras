@@ -16,6 +16,14 @@ $width: 500px;
 .retouche-grid-wrapper{
   position: relative;
   width: $width;
+
+  *::selection{
+    background-color: rgba($color: #000000, $alpha: 0);
+  }
+
+  *::-moz-selection{
+    background-color: rgba($color: #000000, $alpha: 0);
+  }
 }
 
 .image-slider-container {
