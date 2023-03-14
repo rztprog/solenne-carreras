@@ -22,8 +22,10 @@
       <% content.photos&.each do |photo| %>
         <div class="grid-photo-wrapper">
           <img src="<%= cl_image_path "photographies/content/" + photo.key %>" alt="photographie photos">
-          <%= link_to purge_photo_contents_path(photo, @photographie), class: "linked", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} do %>
-            <i class="far fa-trash-alt"></i>
+          <% if user_signed_in? %>
+            <%= link_to purge_photo_contents_path(photo, @photographie), class: "linked", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
           <% end %>
         </div>
       <% end %>

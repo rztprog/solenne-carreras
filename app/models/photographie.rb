@@ -2,6 +2,7 @@ class Photographie < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :description, presence: true
   validates :photo, presence: true
+
   validate :validate_photo_filetype
 
   has_many :contents, dependent: :destroy
