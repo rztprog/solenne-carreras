@@ -1,6 +1,6 @@
 <div class="photographie-show">
   <div class="photographie-show-intro">
-    <img src="<%= cl_image_path "photographies/" + @photographie.photo.key %>" alt="photographie photo">
+    <img src="<%= cl_image_path "photographies/" + @photographie.photo.key, :raw_transformation => "f_auto,q_50" %>" alt="main photographie photo">
     <p><%= @photographie.description %></p>
   </div>
   <div class="photographie-container">
@@ -21,7 +21,7 @@
     <% @photographie.contents&.each do |content| %>
       <% content.photos&.each do |photo| %>
         <div class="grid-photo-wrapper">
-          <img src="<%= cl_image_path "photographies/content/" + photo.key %>" alt="photographie photos">
+          <img src="<%= cl_image_path "photographies/content/" + photo.key, :raw_transformation => "f_auto,q_50" %>" alt="photographie photos">
           <% if user_signed_in? %>
             <%= link_to purge_photo_contents_path(photo, @photographie), class: "linked", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} do %>
               <i class="far fa-trash-alt"></i>
