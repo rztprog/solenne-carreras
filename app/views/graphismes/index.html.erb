@@ -29,7 +29,7 @@
             <%= link_to graphisme_path(graphisme) do %>
               <div class="photographie-grid-element">
                 <div class="photographie-photo-container">
-                  <img class="photographie-photo" src="<%= cl_image_path "graphismes/" + graphisme.photo.key %>" alt="graphisme photo">
+                  <img class="photographie-photo" src="<%= cl_image_path "graphismes/" + graphisme.photo.key, :raw_transformation => "f_auto,q_50,h_400,c_fit" %>" alt="graphisme photo">
                 </div>
                 <div class="photographie-photo-name">
                   <p><%= graphisme.name %></p>
