@@ -29,7 +29,7 @@
             <%= link_to photography_path(photographie) do %>
               <div class="photographie-grid-element">
                 <div class="photographie-photo-container">
-                  <img class="photographie-photo" src="<%= cl_image_path "photographies/" + photographie.photo.key %>" alt="photographie photo">
+                  <img class="photographie-photo" src="<%= cl_image_path "photographies/" + photographie.photo.key, :raw_transformation => "f_auto,q_50,h_400,c_fit" %>" alt="photographie photo">
                 </div>
                 <div class="photographie-photo-name">
                   <p><%= photographie.name %></p>
