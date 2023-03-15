@@ -2,7 +2,7 @@
   <div>
     <%= link_to "Solenne Carreras", root_path, class: "navbar-title-link" %>
   </div>
-  <ul class="navbar-list" data-menu-burger-target='desktopList'>
+  <ul class="navbar-list" data-menu-burger-target='desktopList' data-navbar-target="navbarList">
     <li><%= link_to "PHOTOGRAPHIE", photographies_path, class: "#{'current-list' if current_page?(photographies_path)}" %></li>
     <li><%= link_to "RETOUCHES", retouches_path, class: "#{'current-list' if current_page?(retouches_path)}"  %></li>
     <li><%= link_to "GRAPHISME", graphismes_path, class: "#{'current-list' if current_page?(graphismes_path)}"  %></li>
