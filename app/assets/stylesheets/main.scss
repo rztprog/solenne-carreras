@@ -13,17 +13,29 @@ html, body{
 }
 
 .intro{
+  position: relative;
   height: calc(100vh - 128px);
   display: flex;
   justify-content: center;
-  padding-top: 100px;
-  position: relative;
+  // padding-top: 100px;
+}
+
+.text-intro-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow-wrap: break-word;
+  text-align: center;
 }
 
 .text-intro{
   font-size: 8*4px;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
+  text-shadow: 0em 0em 0.2em #fff;
+  top: 10%;
+  margin: 0 50px;
 }
 
 .main{
@@ -40,5 +52,11 @@ html, body{
 @media screen and (max-width: 900px) {
   .intro{
     height: calc(100vh - 89px); 
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .text-intro{
+    top: calc(50% - 128px);
   }
 }
