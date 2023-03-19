@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import { Carousel } from "./carouselClass"
+import { Carousel } from "./carousel"
 
 export default class extends Controller {
   static targets = ["carouselHome"];

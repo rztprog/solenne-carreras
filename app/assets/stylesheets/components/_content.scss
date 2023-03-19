@@ -1,7 +1,7 @@
 $gap: 20px;
 $column: 3;
 
-.grid-photos-container {
+.grid-photos-container{
   line-height: 0;
   padding: 0 100px;
 
@@ -21,6 +21,17 @@ $column: 3;
 
 .grid-photo-wrapper{
   position: relative;
+}
+
+.fade-in{
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-visible{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .linked{

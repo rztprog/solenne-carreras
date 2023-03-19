@@ -1,4 +1,4 @@
-<div class="photographie-show">
+<div class="photographie-show" data-controller="image-fadein">
   <div class="photographie-show-intro">
     <img src="<%= cl_image_path "photographies/" + @photographie.photo.key, :raw_transformation => "f_auto,q_50,h_1280,c_fit" %>" alt="main photographie photo">
     <p><%= @photographie.description %></p>
@@ -20,7 +20,7 @@
   <div class="grid-photos-container">
     <% @photographie.contents&.each do |content| %>
       <% content.photos&.each do |photo| %>
-        <div class="grid-photo-wrapper">
+        <div class="grid-photo-wrapper fade-in"   data-image-fadein-target='fadeinImageContainer'>
           <img src="<%= cl_image_path "photographies/content/" + photo.key, :raw_transformation => "f_auto,q_50,w_1000,c_fit" %>" alt="photographie photo">
           <% if user_signed_in? %>
             <%= link_to purge_photo_contents_path(photo, @photographie), class: "linked", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} do %>
