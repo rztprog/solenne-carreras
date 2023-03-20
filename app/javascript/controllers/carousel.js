@@ -9,6 +9,7 @@ export class Carousel {
     let children = [].slice.call(element.children);
 
     this.isMobile = false;
+    this.isMobileTwo = false;
     this.isTablet = false;
     this.currentItem = 0;
 
@@ -61,15 +62,22 @@ export class Carousel {
   }
 
   onWindowResize () {
-    let mobile = window.innerWidth < 1000;
-    let tablet = window.innerWidth < 1600 && window.innerWidth > 1000;
+    let mobile = window.innerWidth < 550;
+    let mobileTwo = window.innerWidth < 800;
+    let tablet = window.innerWidth < 1100 && window.innerWidth > 800;
 
     if (tablet !== this.isTablet) {
       this.isTablet = tablet;
       this.setStyle();
     }
 
+    if (mobileTwo !== this.isMobileTwo) {
+      this.isMobileTwo = mobileTwo;
+      this.setStyle();
+    }
+
     if (mobile !== this.isMobile) {
+      this.root.setAttribute("height", "500px");
       this.isMobile = mobile;
       this.setStyle();
     }
@@ -151,14 +159,14 @@ export class Carousel {
   }
 
   get slidesToScroll () {
-    return this.isMobile || this.isTablet ? 1 : this.options.slidesToScroll;
+    return this.isMobileTwo || this.isTablet ? 1 : this.options.slidesToScroll;
   }
 
   get slidesVisible () {
     if (this.isTablet) {
-      return 2;
+      return 3;
     } else {
-      return this.isMobile ? 1 : this.options.slidesVisible;
+      return this.isMobile ? 1 : this.isMobileTwo ? 2 : this.options.slidesVisible;
     }
   }
 }
