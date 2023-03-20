@@ -31,7 +31,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="photographie-navigation <%= (@next_photographie.present? && !@previous_photographie.present?) ? "photographie-navigation-push-right" : "photographie-navigation-push-between" %>">
+  <div class="photographie-navigation fade-in <%= (@next_photographie.present? && !@previous_photographie.present?) ? "photographie-navigation-push-right" : "photographie-navigation-push-between" %>">
     <% if @previous_photographie.present? %>
       <%= link_to "< " + @previous_photographie.name, @previous_photographie, class: "photographie-navigation-previous" %>
     <% end %>

@@ -1,4 +1,4 @@
-<div class="photographie-show">
+<div class="photographie-show" data-controller="image-fadein">
   <div class="graphisme-show-intro">
     <p><%= @graphisme.name %></p>
   </div>
@@ -19,7 +19,7 @@
   <div class="grid-photos-container">
     <% @graphisme.elements&.each do |element| %>
       <% element.photos&.each do |photo| %>
-        <div class="grid-photo-wrapper">
+        <div class="grid-photo-wrapper fade-in">
           <img src="<%= cl_image_path "graphismes/element/" + photo.key, :raw_transformation => "f_auto,q_50,w_1000,c_fit" %>" alt="graphisme photos">
           <%= link_to purge_photo_elements_path(photo, @graphisme), class: "linked", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} do %>
             <i class="far fa-trash-alt"></i>
@@ -28,7 +28,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="photographie-navigation <%= (@next_graphisme.present? && !@previous_graphisme.present?) ? "photographie-navigation-push-right" : "photographie-navigation-push-between" %>">
+  <div class="photographie-navigation fade-in <%= (@next_graphisme.present? && !@previous_graphisme.present?) ? "photographie-navigation-push-right" : "photographie-navigation-push-between" %>">
     <% if @previous_graphisme.present? %>
       <%= link_to "< " + @previous_graphisme.name, @previous_graphisme, class: "photographie-navigation-previous" %>
     <% end %>
