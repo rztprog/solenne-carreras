@@ -6,7 +6,14 @@
   margin-bottom: calc(15px *2);
 
   p{
+    text-align: center;
     color: #000;
     font-size: 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .graphisme-show-intro > p{
+    font-size: 40px;
   }
 }
