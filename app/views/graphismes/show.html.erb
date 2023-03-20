@@ -19,7 +19,7 @@
   <div class="grid-photos-container">
     <% @graphisme.elements&.each do |element| %>
       <% element.photos&.each do |photo| %>
-        <div class="grid-photo-wrapper fade-in">
+        <div class="grid-photo-wrapper fade-in" data-image-fadein-target='fadeinImageContainer'>
           <img src="<%= cl_image_path "graphismes/element/" + photo.key, :raw_transformation => "f_auto,q_50,w_1000,c_fit" %>" alt="graphisme photos">
           <%= link_to purge_photo_elements_path(photo, @graphisme), class: "linked", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer cet élément ?"} do %>
             <i class="far fa-trash-alt"></i>
