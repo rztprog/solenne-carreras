@@ -8,27 +8,20 @@
       </div>
     <% end %>
     <div class="retouches-container-elements">
-      <% @retouches&.each do |retouche| %>
         <div class="retouche-grid-wrapper">
-          <% if user_signed_in? %>
-            <div class="linked">
-              <%= link_to edit_retouch_path(retouche), class: "" do %>
-                <i class="far fa-edit"></i>
-              <% end %>
-              <%= link_to retouch_path(retouche), class: "", data: {turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment supprimer la retouche #{retouche.id} ?"} do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            </div>
-          <% end %>
           <div class="img-comp-container">
             <div class="img-comp-img">
-              <img class="" src="<%= cl_image_path "retouches/" + retouche.after_photo.key %>" alt="retouche photo 1">
+              <img class="" src="<%= cl_image_path "retouches/" + @retouches[0].after_photo.key %>" alt="retouche photo 1">
             </div>
             <div class="img-comp-img img-comp-overlay">
-              <img class="" src="<%= cl_image_path "retouches/" + retouche.before_photo.key %>" alt="retouche photo 2">
+              <img class="" src="<%= cl_image_path "retouches/" + @retouches[0].before_photo.key %>" alt="retouche photo 2">
             </div>
           </div>
         </div>
+    </div>
+    <div class="retouche-grid-buttons">
+      <% @retouches&.each do |retouche| %>
+        <img class="retouche-grid-buttons-img" src="<%= cl_image_path "retouches/" + retouche.after_photo.key %>" alt="retouche photo">
       <% end %>
     </div>
   </div>

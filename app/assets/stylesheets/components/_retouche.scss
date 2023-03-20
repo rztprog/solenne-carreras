@@ -2,11 +2,10 @@ $height: 600px;
 $width: 500px;
 
 .retouches-container{
-  width: 100%;
+  // width: 100%;
 }
 
 .retouches-container-elements{
-  // width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, $width);
   grid-column-gap: 10px;
@@ -14,9 +13,6 @@ $width: 500px;
 }
 
 .retouche-grid-wrapper{
-  position: relative;
-  width: $width;
-
   *::selection{
     background-color: rgba($color: #000000, $alpha: 0);
   }
@@ -25,6 +21,31 @@ $width: 500px;
     background-color: rgba($color: #000000, $alpha: 0);
   }
 }
+
+.retouche-grid-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  img{
+    margin: 4px;
+    width: 180px;
+    height: 180px;
+  }
+
+  img:nth-child(1),
+  img:nth-last-child(1){
+    margin: 4px 0;
+  }
+}
+
+.retouche-grid-buttons-img{
+  cursor: pointer;
+  &:hover{
+    border: 1px solid black;
+  }
+}
+
 
 .image-slider-container {
   position: relative;
@@ -78,15 +99,5 @@ $width: 500px;
 }
 
 @media screen and (max-width: 900px) {
-  // .retouches-container-elements {
-  //   max-width: 100%;
-  // }
 
-  // .img-comp-container{
-  //   width: 100%;
-  // }
-
-  // .img-comp-img {
-  //   widows: 100%;
-  // }
 }
