@@ -77,7 +77,6 @@ export class Carousel {
     }
 
     if (mobile !== this.isMobile) {
-      this.root.setAttribute("height", "500px");
       this.isMobile = mobile;
       this.setStyle();
     }
