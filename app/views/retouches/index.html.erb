@@ -7,21 +7,19 @@
         <% end %>
       </div>
     <% end %>
-    <div class="retouches-container-elements">
-        <div class="retouche-grid-wrapper">
-          <div class="img-comp-container">
-            <div class="img-comp-img">
-              <img class="" src="<%= cl_image_path "retouches/" + @retouches[0].after_photo.key %>" alt="retouche photo 1">
-            </div>
-            <div class="img-comp-img img-comp-overlay">
-              <img class="" src="<%= cl_image_path "retouches/" + @retouches[0].before_photo.key %>" alt="retouche photo 2">
-            </div>
-          </div>
-        </div>
+    <div class="img-comp-container">
+      <div class="img-comp-img">
+        <img class="" src="<%= cl_image_path "retouches/" + @retouches[0].after_photo.key %>" alt="retouche photo 1">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img class="" src="<%= cl_image_path "retouches/" + @retouches[0].before_photo.key %>" alt="retouche photo 2">
+      </div>
     </div>
     <div class="retouche-grid-buttons">
       <% @retouches&.each do |retouche| %>
-        <img class="retouche-grid-buttons-img" src="<%= cl_image_path "retouches/" + retouche.after_photo.key %>" alt="retouche photo">
+        <%= link_to retouch_path(retouche) do %> 
+          <img class="retouche-grid-buttons-img" src="<%= cl_image_path "retouches/" + retouche.after_photo.key %>" alt="retouche photo">
+        <% end %>
       <% end %>
     </div>
   </div>

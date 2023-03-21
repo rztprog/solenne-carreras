@@ -1,1 +1,26 @@
-<p>show retouches</p>
+<div class="photographie-container" data-controller="slider-comparison" data-slider-comparison-target="slider">
+  <div class="retouches-container">
+    <% if user_signed_in? %>
+      <div class="photographie-buttons-container">
+        <%= link_to new_retouch_path, class: "photographie-add-button" do %>
+          <i class="fa-solid fa-plus"></i> Ajouter
+        <% end %>
+      </div>
+    <% end %>
+    <div class="img-comp-container">
+      <div class="img-comp-img">
+        <img class="" src="<%= cl_image_path "retouches/" + @retouche.after_photo.key %>" alt="retouche photo 1">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img class="" src="<%= cl_image_path "retouches/" + @retouche.before_photo.key %>" alt="retouche photo 2">
+      </div>
+    </div>
+    <div class="retouche-grid-buttons">
+      <% @retouches&.each do |retouche| %>
+        <%= link_to retouch_path(retouche) do %> 
+          <img class="retouche-grid-buttons-img" src="<%= cl_image_path "retouches/" + retouche.after_photo.key %>" alt="retouche photo">
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
