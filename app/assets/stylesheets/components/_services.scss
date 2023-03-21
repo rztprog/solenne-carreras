@@ -41,16 +41,9 @@
   border-bottom: 1px solid black;
 
   h3{
-    margin: 15px 0;
     line-height: 1;
-  }
-
-  ul{
-    margin: 0 0 15px 0;
-  }
-
-  h3{
     font-size: 2em;
+    margin: 15px 0;
   }
 
   li{
@@ -67,7 +60,40 @@
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+
+  span{
+    position: absolute;
+    display: block;
+    background-color: black;
+    width: 15px;
+    height: 1px;
+    border-radius: 3px;
+    transition: 0.5s;
+  }
 }
+
+.rotate-span{
+  // transition: 0.1s;
+  transform: rotate(90deg);
+}
+
+.services-cross{
+  position: relative;
+  width: 15px;
+}
+
+.accordion-list{
+  height: auto;
+  margin-bottom: 15px;
+  transition: 1s ease-out;
+}
+
+.accordion-list-close{
+  margin-bottom: 0;
+  height: 0px;
+}
+
+
 
 @media screen and (max-width: 950px) {
   .services-grid-image-container{
