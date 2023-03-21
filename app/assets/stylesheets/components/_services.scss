@@ -35,12 +35,14 @@
 .services-description{
   margin: 16px 0;
   list-style-position: inside;
+  overflow-y: hidden;
 
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 
   h3{
     margin: 15px 0;
+    line-height: 1;
   }
 
   ul{
