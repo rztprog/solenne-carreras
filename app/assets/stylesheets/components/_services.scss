@@ -36,8 +36,15 @@
   margin: 16px 0;
   list-style-position: inside;
 
-  ul, h3{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  h3{
     margin: 15px 0;
+  }
+
+  ul{
+    margin: 0 0 15px 0;
   }
 
   h3{
@@ -45,11 +52,19 @@
   }
 
   li{
+    list-style-type: circle;
     font-family: "degular-regular";
     font-weight: lighter;
     font-size: 0.8em;
     padding: 0;
   }
+}
+
+.services-description-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 950px) {
