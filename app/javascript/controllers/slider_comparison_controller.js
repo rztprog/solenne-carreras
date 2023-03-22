@@ -1,8 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["slider"];
-  
+
   connect() {
     /*find all elements with an "overlay" class:*/
     let imgCompOverlay = document.querySelectorAll(".img-comp-overlay");

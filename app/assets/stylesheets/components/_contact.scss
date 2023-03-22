@@ -41,12 +41,14 @@
 
   &:focus {
     outline: 2px solid #000;
+    outline-offset: 2px;
   }
 }
 
 .form-row textarea{
   min-height: 150px;
   max-height: 350px;
+  resize: none;
 }
 
 .form-contact{ 

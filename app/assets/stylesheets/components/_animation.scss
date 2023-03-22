@@ -1,12 +1,13 @@
 .animation-part{
   display: flex;
   overflow: hidden;
+  position: relative;
 }
 
 .animation-gradient-left,
 .animation-gradient-right{
   position: absolute;
-  height: 300px;
+  height: 100%;
   width: 100%;
   z-index: 1;
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 10%);
@@ -72,12 +73,6 @@
 
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 720px) {
-  .animation-part,
-  .animation-gradient-left,
-  .animation-gradient-right{
-    height: 200px;
-  }
-
   .text-wrapper > p{
     font-size: 18*4px;
   }
@@ -88,11 +83,6 @@
 }
 
 @media screen and (max-width: 550px) {
-  .animation-part,
-  .animation-gradient-left,
-  .animation-gradient-right{
-    height: 100px;
-  }
 
   .text-wrapper > p{
     font-size: 12*4px;

@@ -21,8 +21,8 @@
 .services-grid-image-container{
   background-color: #000;
   border-radius: 25px;
-  width: 270px;
-  height: 350px;
+  width: 320px;
+  height: 370px;
   overflow: hidden; // For fit cover with border-radius parent
 }
 
@@ -35,22 +35,63 @@
 .services-description{
   margin: 16px 0;
   list-style-position: inside;
+  overflow-y: hidden;
 
-  ul, h3{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+
+  h3{
+    line-height: 1;
+    font-size: 2em;
     margin: 15px 0;
   }
 
-  h3{
-    font-size: 2em;
-  }
-
   li{
+    list-style-type: circle;
     font-family: "degular-regular";
     font-weight: lighter;
     font-size: 0.8em;
     padding: 0;
   }
 }
+
+.services-description-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  span{
+    position: absolute;
+    display: block;
+    background-color: black;
+    width: 15px;
+    height: 1px;
+    border-radius: 3px;
+    transition: 0.6s ease-out;
+  }
+}
+
+.rotate-span{
+  transform: rotate(90deg);
+}
+
+.services-cross{
+  position: relative;
+  width: 15px;
+}
+
+.accordion-list{
+  max-height: 200px;
+  margin-bottom: 15px;
+  transition: 0.6s ease-out;
+}
+
+.accordion-list-close{
+  margin-bottom: 0;
+  max-height: 0;
+}
+
 
 @media screen and (max-width: 950px) {
   .services-grid-image-container{

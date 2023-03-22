@@ -1,15 +1,16 @@
 class RetouchesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_retouche, only: [:edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_retouche, only: [:show, :edit, :update, :destroy]
 
   def index
     @retouches = Retouche.all
   end
 
   def show
-    # if @retouche == nil 
-    #   render :new, status: :unprocessable_entity
-    # end
+    @retouches = Retouche.all
+    if @retouche == nil 
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def new

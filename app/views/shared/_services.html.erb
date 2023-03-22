@@ -1,5 +1,5 @@
 <h2 class="services-part-title">Nos services</h2>
-<div class="services-grid" data-controller="image-fadein">
+<div class="services-grid" data-controller="image-fadein accordion">
   <div>
     <div class="services-grid-image-container fade-in" data-image-fadein-target='fadeinImageContainer'>
       <%= cl_image_tag("wetransfer_photos-home-page-3-rubriques_2022-12-30_1602/SolenneCarreras_2021_07_Loire_Valley_Lodges_280_1_k02qmd.jpg",
@@ -7,15 +7,19 @@
       class: "services-grid-image") %>
     </div>
     <div class="services-description">
-      <hr>
-      <h3>Photographie</h3>
-      <ul>
+      <div class="services-description-title" data-action="click->accordion#action" data-index="0">
+        <h3 data-index="0">Photographie</h3>
+        <div class="services-cross" data-index="0">
+          <span></span>
+          <span data-accordion-target='accordionCross'></span>
+        </div>
+      </div>
+      <ul class="accordion-list" data-accordion-target='accordionList' data-index="0">
         <li>Photographie immobilière</li>
         <li>Culinaire & restauration</li>
         <li>Packshots produits</li>
         <li>Évènementiel</li>
       </ul>
-      <hr>
     </div>
   </div>
   <div>
@@ -24,16 +28,20 @@
       :raw_transformation => "f_auto,q_50,w_1000,c_fit",
       class: "services-grid-image") %>
     </div>
-    <div class="services-description">
-      <hr>
-      <h3>Retouches</h3>
-      <ul>
+    <div class="services-description" >
+      <div class="services-description-title" data-action="click->accordion#action" data-index="1">
+        <h3 data-index="1">Retouches</h3>
+        <div class="services-cross" data-index="1">
+          <span></span>
+          <span data-accordion-target='accordionCross'></span>
+        </div>
+      </div>
+      <ul class="accordion-list" data-accordion-target='accordionList' data-index="1">
         <li>Photographie immobilière</li>
         <li>Culinaire & restauration</li>
         <li>Packshots produits</li>
         <li>Évènementiel</li>
       </ul>
-      <hr>
     </div>
   </div>
   <div>
@@ -43,15 +51,19 @@
       class: "services-grid-image") %>
     </div>
     <div class="services-description">
-      <hr>
-      <h3>Graphisme</h3>
-      <ul>
+      <div class="services-description-title" data-action="click->accordion#action" data-index="2">
+        <h3 data-index="2">Graphisme</h3>
+        <div data-index="2" class="services-cross">
+          <span></span>
+          <span data-accordion-target='accordionCross'></span>
+        </div>
+      </div>
+      <ul class="accordion-list" data-accordion-target='accordionList' data-index="2">
         <li>Photographie immobilière</li>
         <li>Culinaire & restauration</li>
         <li>Packshots produits</li>
         <li>Évènementiel</li>
       </ul>
-      <hr>
     </div>
   </div>
 </div>
