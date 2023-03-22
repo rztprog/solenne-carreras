@@ -177,6 +177,7 @@ li > a{
   .navbar{
     li{
       padding: 0;
+      margin: 15px 0;
     }
   }
 
@@ -197,11 +198,6 @@ li > a{
     z-index: 2;
     overflow: hidden;
     font-family: "degular-regular";
-  }
-
-  li{
-    padding: 0;
-    margin: 15px 0;
   }
 }
 
