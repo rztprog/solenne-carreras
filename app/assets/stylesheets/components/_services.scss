@@ -68,12 +68,11 @@
     width: 15px;
     height: 1px;
     border-radius: 3px;
-    transition: 0.5s;
+    transition: 0.6s ease-out;
   }
 }
 
 .rotate-span{
-  // transition: 0.1s;
   transform: rotate(90deg);
 }
 
@@ -83,16 +82,15 @@
 }
 
 .accordion-list{
-  height: auto;
+  max-height: 200px;
   margin-bottom: 15px;
-  transition: 1s ease-out;
+  transition: 0.6s ease-out;
 }
 
 .accordion-list-close{
   margin-bottom: 0;
-  height: 0px;
+  max-height: 0;
 }
-
 
 
 @media screen and (max-width: 950px) {
