@@ -1,7 +1,8 @@
 .login-container{
   height: calc(100vh - 132px - 111px);
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  // flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
@@ -24,6 +25,7 @@
   padding: 5px 10px;
   &:focus {
     outline: 2px solid #000;
+    outline-offset: 2px;
   }
 }
 
@@ -37,13 +39,12 @@
   font-size: 1.2em;
   padding: 15px;
   cursor: pointer;
-  background-color: #edfff3;
-  color: #000;
+  background-color: #5e55bc;
+  color: #fff;
   border-radius: 8px;
   border: 1px solid #777;
 
   &:hover{
-    color: #fff;
     background-color: #000;
   }
 }
@@ -90,10 +91,25 @@
   color: rgba($color: #000000, $alpha: 0.1);
 }
 
+.left-admin-part{
+  width: 500px;
+}
+
+.admin-image{
+  width: 80%;
+  height: 80%;
+}
+
+@media screen and (max-width: 1100px) {
+  .left-admin-part{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .login-modal{
     padding: 25px;
-    margin: 0 25px;
+    margin: 0;
     width: 100%;
     border-radius: 0;
     box-shadow: 0px 0px 0px 0px #fff;
