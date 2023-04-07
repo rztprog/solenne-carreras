@@ -16,6 +16,10 @@
 .services-grid{
   display: flex;
   justify-content: space-evenly;
+
+  div{
+    width: 320px;
+  }
 }
 
 .services-grid-image-container{
@@ -79,6 +83,8 @@
 .services-cross{
   position: relative;
   width: 15px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .accordion-list{
@@ -93,7 +99,7 @@
 }
 
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   .services-grid-image-container{
     width: 100%;
     height: 400px;
@@ -105,7 +111,11 @@
 
   .services-grid > div{
     margin: 0 50px;
-  }  
+  }
+
+  .services-grid div{
+    width: auto;
+  }
 
   .services-grid{
     flex-direction: column;
