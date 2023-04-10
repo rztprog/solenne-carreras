@@ -9,7 +9,9 @@ export default class extends Controller {
 
       // Fix navbarlist height when scrollY > 0
       if (window.scrollY > 0) {
-        this.navbarListTarget.style.height =  "calc(100% - 72px)";
+          this.navbarListTarget.style.height =  "calc(100% - 73px)";
+      } else {
+        this.navbarListTarget.style.height =  "";
       }
     })
   }
