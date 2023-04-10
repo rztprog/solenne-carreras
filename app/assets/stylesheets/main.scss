@@ -50,6 +50,9 @@ html, body{
 }
 
 @media screen and (max-width: 900px) {
+  .main{
+    margin-top: 83px;
+  }
   .intro{
     height: calc(100vh - 89px); 
   }
