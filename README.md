@@ -28,7 +28,7 @@ The site also uses external libraries and tools:
 
 ## Deployment
 
-Solenne Carreras' website is deployed on [Platform] at the following address: https://solenne-carreras.fr/
+Solenne Carreras' website is deployed on  at the following address: https://solennecarreras.com/
 
 ## Author
 
